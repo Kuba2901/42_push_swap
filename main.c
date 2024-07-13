@@ -32,7 +32,24 @@ int main(int argc, char *argv[]) {
     sort(&stack_a, &stack_b);
 
     printf("Final state:\n");
-	print_stacks(&stack_a, &stack_b);
+    print_stacks(&stack_a, &stack_b);
+
+    // Verify if the stack is sorted
+    t_node *current = stack_a.top;
+    int is_sorted = 1;
+    while (current && current->next) {
+        if (current->value > current->next->value) {
+            is_sorted = 0;
+            break;
+        }
+        current = current->next;
+    }
+
+    if (is_sorted) {
+        printf("The stack is correctly sorted.\n");
+    } else {
+        printf("Error: The stack is not correctly sorted.\n");
+    }
 
     // Clean up
     free_stack(&stack_a);
@@ -40,3 +57,4 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+

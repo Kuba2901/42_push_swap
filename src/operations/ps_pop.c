@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:52:14 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 15:53:40 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/13 18:45:36 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int pop(t_stack *stack)
     int		value;
 	
     if (stack->size == 0)
-		return (0); // TODO: Verify (was INT_MIN)
+		return (INT_MIN);
 	top_node = stack->top;
 	value = top_node->value;
     stack->top = top_node->next;

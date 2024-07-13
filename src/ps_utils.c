@@ -6,37 +6,11 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:58:41 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 16:09:12 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/13 18:23:56 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-
-int	get_median(t_stack *stack, int n)
-{
-    int		*arr;
-    t_node	*current;
-
-	arr = malloc(n * sizeof(int));
-	current = stack->top;
-    for (int i = 0; i < n; i++) {
-        arr[i] = current->value;
-        current = current->next;
-    }
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-
-    int median = arr[n / 2];
-    free(arr);
-    return median;
-}
 
 void print_stacks(t_stack *a, t_stack *b)
 {
