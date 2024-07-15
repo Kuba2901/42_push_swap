@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:58:41 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 18:23:56 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/15 16:51:49 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,11 @@ void print_operation(const char *op) {
 }
 
 int get_min(t_stack *stack) {
-    int min = INT_MAX;
-    t_node *current = stack->top;
+    t_node	*current;
+    int		min;
+	
+	current = stack->top;
+	min = INT_MAX;
     while (current) {
         if (current->value < min) {
             min = current->value;
@@ -93,4 +96,35 @@ void free_stack(t_stack *stack) {
     while (stack->size > 0) {
         pop(stack);
     }
+}
+
+int	get_stack_len(t_stack *stack)
+{
+	t_node	*node;
+	int		i;
+
+	i = 0;
+	node = stack->top;
+	while (node) {
+        i++;
+        node = node->next;
+    }
+    return (i);
+}
+
+int	is_sorted(t_stack *stack)
+{
+	t_node	*node;
+	int		max;
+
+	max = stack->top->value;
+	node = stack->top;
+	while (node) {
+        if (node->value < max)
+			return (0);
+		max = node->value;
+        node = node->next;
+    }
+    return (1);
+	
 }
