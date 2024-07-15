@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:58:41 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/15 16:51:49 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:01:36 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,4 +127,27 @@ int	is_sorted(t_stack *stack)
     }
     return (1);
 	
+}
+
+int	get_min_index(t_stack *stack)
+{
+	t_node	*current;
+    int		min_index;
+    int		min;
+    int		i;
+	
+	current = stack->top;
+	min_index = 0;
+	min = stack->top->value;
+	i = 0;
+    while (current)
+	{
+        if (current->value < min) {
+            min = current->value;
+            min_index = i;
+        }
+		i++;
+        current = current->next;
+    }
+    return (min_index);
 }

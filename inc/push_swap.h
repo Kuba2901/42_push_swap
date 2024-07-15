@@ -43,4 +43,5 @@ void	sort_four(t_stack *a, t_stack *b);
 int		is_sorted(t_stack *stack);
 void	ps_sort_small(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
+int		get_min_index(t_stack *stack);
 #endif
