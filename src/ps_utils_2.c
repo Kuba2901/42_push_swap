@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 16:09:08 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 16:16:37 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,48 @@ void	ps_sort_int_array(int *arr, int arr_size)
 {
 	quicksort(arr, 0, arr_size - 1);
 	print_int_array(arr, arr_size);
+}
+
+static int	ps_find_num_index(int *arr, int arr_size, int num)
+{
+	int	i;
+
+	i = -1;
+	while (++i < arr_size)
+	{
+		if (arr[i] == num)
+			return (i);
+	}
+	return (-1);
+}
+
+static void	print_stack_with_final_indexes(t_stack *stack)
+{
+	t_node	*node;
+
+	node = stack->top;
+	while (node)
+	{
+		printf("Value: (%d), final index: (%d)\n", node->value, node->final_index);
+		node = node->next;
+	}
+}
+
+void	ps_assign_indexes(t_stack *a, int *arr)
+{
+	t_node	*i;
+	t_node	*j;
+
+	i = a->top;
+	while (i)
+	{
+		j = i;
+		while (j)
+		{
+			j->final_index = ps_find_num_index(arr, a->size, j->value);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	print_stack_with_final_indexes(a);
 }

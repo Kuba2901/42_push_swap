@@ -26,6 +26,7 @@ int main(int argc, char *argv[]) {
     }
 	int	*arr = ps_dup_stack(&stack_a);
 	ps_sort_int_array(arr, stack_a.size);
+	ps_assign_indexes(&stack_a, arr);
     ps_main_sort(&stack_a, &stack_b);
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");
