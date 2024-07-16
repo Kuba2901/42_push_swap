@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 18:01:11 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:06:05 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,14 +142,11 @@ void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
 	while (a->top && a->size >= 5 && a->top->value != first)
 	{
 		if (a->top->value < max)
-		{
-			printf("FOUND LESS: (first <-> %d) - (current <-> %d)\n", first, a->top->value);
 			ps_px(a, b, PB);
-		}
 		else
 		{
-			ps_rx(a, b, RA);
 			max = a->top->value;
+			ps_rx(a, b, RA);
 		}
 	}
 }
