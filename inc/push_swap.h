@@ -44,4 +44,9 @@ int		is_sorted(t_stack *stack);
 void	ps_sort_small(t_stack *a, t_stack *b);
 void	sort_five(t_stack *a, t_stack *b);
 int		get_min_index(t_stack *stack);
+int		quick_sort_b(t_stack *a, t_stack *b, int len);
+int		quick_sort_a(t_stack *a, t_stack *b, int len);
+int		find_median(t_stack *stack, int len);
+int		*create_sorted_array(t_stack *stack, int len);
+void	bubble_sort(int *arr, int size);
 #endif

@@ -6,13 +6,14 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 17:02:09 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/15 17:23:22 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/15 17:26:13 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void bubble_sort(int *arr, int size) {
+void bubble_sort(int *arr, int size)
+{
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -24,7 +25,8 @@ void bubble_sort(int *arr, int size) {
     }
 }
 
-int *create_sorted_array(t_stack *stack, int len) {
+int *create_sorted_array(t_stack *stack, int len)
+{
     if (!stack || !stack->top || stack->size == 0) {
         return NULL;
     }
@@ -47,7 +49,6 @@ int *create_sorted_array(t_stack *stack, int len) {
 int	find_median(t_stack *stack, int len)
 {
 	int	median;
-	int	*array_size;
 	int	*array;
 
 	array = create_sorted_array(stack, len);
@@ -65,6 +66,8 @@ int	quick_sort_a(t_stack *a, t_stack *b, int len)
 	median = find_median(a, len);
 	len_copy = len;
 	node = a->top;
+	if (!len || !a->size)
+		return (0);
 	while (len_copy--)
 	{
 		if (node->value < median)
@@ -80,6 +83,7 @@ int	quick_sort_a(t_stack *a, t_stack *b, int len)
 	}
 	quick_sort_a(a, b, len / 2);
 	quick_sort_b(a, b, len / 2);
+	return (0);
 }
 
 int	quick_sort_b(t_stack *a, t_stack *b, int len)
@@ -91,6 +95,8 @@ int	quick_sort_b(t_stack *a, t_stack *b, int len)
 	median = find_median(b, len);
 	len_copy = len;
 	node = b->top;
+	if (!len || !b->size)
+		return (0);
 	while (len_copy--)
 	{
 		if (node->value > median)
@@ -106,4 +112,5 @@ int	quick_sort_b(t_stack *a, t_stack *b, int len)
 	}
 	quick_sort_a(a, b, len / 2);
 	quick_sort_b(a, b, len / 2);
+	return (0);
 }
