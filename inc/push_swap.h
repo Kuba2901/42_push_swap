@@ -10,6 +10,17 @@
 # define MAX_INT 2147483647
 # define MIN_INT -2147483648
 # define NUMBERS_VALID 0
+# define RA 30
+# define RB 31
+# define RR 32
+# define PA 33
+# define PB 34
+# define SA 35
+# define SB 36
+# define RRA 37
+# define RRB 38
+# define RRR 39
+
 
 typedef struct s_node {
     int value;
@@ -26,10 +37,14 @@ typedef struct s_stack {
 
 int		ps_stack_pop(t_stack *stack);
 void	ps_stack_push(t_stack *stack, int value);
-void	ps_px(t_stack *src, t_stack *dst);
-void	ps_rrx(t_stack *stack);
-void	ps_rx(t_stack *stack);
-void	ps_sx(t_stack *stack);
+void	ps_push_to(t_stack *src, t_stack *dst);
+void	ps_px(t_stack *a, t_stack *b, int code);
+void	ps_swap(t_stack *stack);
+void	ps_sx(t_stack *stack, int code);
+void	ps_rotate(t_stack *stack);
+void	ps_rx(t_stack *a, t_stack *b, int code);
+void	ps_reverse_rotate(t_stack *stack);
+void	ps_rrx(t_stack *a, t_stack *b, int code);
 int		ps_is_valid_integer(const char *str);
 int		ps_has_duplicates(t_stack *stack);
 void	ps_sort_three(t_stack *stack);

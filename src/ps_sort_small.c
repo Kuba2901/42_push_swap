@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:45:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 15:43:37 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:50:14 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,35 +32,29 @@ void	ps_sort_four(t_stack *a, t_stack *b)
 	if (ps_is_sorted(a))
 		return;
 	min_index = ps_get_min_index(a);
-	printf("Min index (SORT 4): %d <-> %d\n", min_index, ps_get_min(a));
 	if (min_index == 1)
 	{
-		ps_rx(a);
+		ps_rotate(a);
 		print_operation("RA");
 	}
 	else if (min_index == 2)
 	{
 		while (min_index-- > 0)
 		{
-			ps_rx(a);
+			ps_rotate(a);
 			print_operation("RA");
 		}
 	}
 	else if (min_index == 3)
 	{
-		ps_rrx(a);
+		ps_reverse_rotate(a);
 		print_operation("RRA");
 	}
 	if (ps_is_sorted(a))
 		return;
-	ps_px(a, b);
-	print_operation("PB");
-	print_operation("PRINTING AFTER INITIAL PUSH (SORT 4)");
-	print_stacks(a, b);
+	ps_push_to(a, b);
 	ps_sort_three(a);
-	print_operation("PRINTING AFTER SORT 3");
-	print_stacks(a, b);
-	ps_px(b, a);
+	ps_push_to(b, a);
 	print_operation("PA");
 }
 
@@ -72,31 +66,31 @@ void	ps_sort_five(t_stack *a, t_stack *b)
 	printf("Min index: %d <-> %d\n", min_index, ps_get_min(a));
 	if (min_index == 1)
 	{
-		ps_rx(a);
+		ps_rotate(a);
 		print_operation("RA");
 	}
 	else if (min_index == 2 || min_index == 3)
 	{
 		while (min_index-- > 0)
 		{
-			ps_rx(a);
+			ps_rotate(a);
 			print_operation("RA");
 		}
 	}
 	else
 	{
-		ps_rrx(a);
+		ps_reverse_rotate(a);
 		print_operation("RRA");
 	}
 	if (ps_is_sorted(a))
 		return ;
-	ps_px(a, b);
+	ps_push_to(a, b);
 	print_operation("PB");
 	print_operation("PRINTING AFTER PUSH");
 	print_stacks(a, b);
 	ps_sort_four(a, b);
 	print_operation("PRINTING AFTER 4 SORT");
 	print_stacks(a, b);
-	ps_px(b, a);
+	ps_push_to(b, a);
 	print_operation("PA");
 }

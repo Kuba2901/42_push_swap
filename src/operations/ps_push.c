@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:51:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 15:22:25 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:51:25 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void ps_stack_push(t_stack *stack, int value)
     stack->size++;
 }
 
-void	ps_px(t_stack *src, t_stack *dst)
+void	ps_push_to(t_stack *src, t_stack *dst)
 {
     int	value;
 
@@ -38,4 +38,18 @@ void	ps_px(t_stack *src, t_stack *dst)
 		return;
 	value = ps_stack_pop(src);
     ps_stack_push(dst, value);
+}
+
+void	ps_px(t_stack *a, t_stack *b, int code)
+{
+	if (code == PA)
+	{
+		ps_push_to(b, a);
+		print_operation("PA");
+	}
+	else if (code == PB)
+	{
+		ps_push_to(a, b);
+		print_operation("PB");
+	}
 }
