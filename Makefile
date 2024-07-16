@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c src/operations/ps_pop.c src/operations/ps_push.c src/operations/ps_reverse_rotate.c src/ps_sort.c src/operations/ps_rotate.c src/ps_sort_three.c src/operations/ps_swap.c src/ps_utils.c src/ps_error_checking.c src/ps_sort_small.c src/ps_utils_2.c
+SRC = main.c src/operations/ps_pop.c src/operations/ps_push.c src/operations/ps_reverse_rotate.c src/ps_sort.c src/operations/ps_rotate.c src/ps_sort_three.c src/operations/ps_swap.c src/ps_utils.c src/ps_error_checking.c src/ps_sort_small.c src/ps_utils_2.c src/ps_calculations.c
 OBJ = $(SRC:.c=.o)
 INC_LIBFT_GNL = -Ilibft/inc_libft/ -Ilibft/inc_gnl/ -Ilibft/inc_ft_printf/
 INC = -Iinc/ $(INC_LIBFT_GNL)
