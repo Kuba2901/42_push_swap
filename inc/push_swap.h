@@ -23,10 +23,16 @@
 
 
 typedef struct s_node {
-    int value;
-	int	final_index;
-    struct s_node *next;
-    struct s_node *prev;
+    int				value;
+	int				final_index;
+	int				sa;
+	int				sb;
+	int				ra;
+	int				rb;
+	int				rra;
+	int				rrb;
+    struct s_node	*next;
+    struct s_node	*prev;
 } t_node;
 
 typedef struct s_stack {
