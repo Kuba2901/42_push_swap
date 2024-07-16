@@ -27,6 +27,12 @@ int main(int argc, char *argv[]) {
 	int	*arr = ps_dup_stack(&stack_a);
 	ps_sort_int_array(arr, stack_a.size);
 	ps_assign_indexes(&stack_a, arr);
+	ps_assign_push_cost(&stack_a, &stack_b);
+	print_operation("BEFORE PUSHING OUT OF SEQUENCE");
+	print_stacks(&stack_a, &stack_b);
+	ps_push_out_of_sequence(&stack_a, &stack_b);
+	print_operation("PUSHED OUT OF SEQUENCE");
+	print_stacks(&stack_a, &stack_b);
     ps_main_sort(&stack_a, &stack_b);
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");

@@ -69,4 +69,6 @@ int		ps_get_min_index(t_stack *stack);
 void	ps_sort_int_array(int *arr, int arr_size);
 int		*ps_dup_stack(t_stack *stack);
 void	ps_assign_indexes(t_stack *a, int *arr);
+void	ps_assign_push_cost(t_stack *a, t_stack *b);
+void	ps_push_out_of_sequence(t_stack *a, t_stack *b);
 #endif

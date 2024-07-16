@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 16:16:37 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:01:11 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,4 +128,28 @@ void	ps_assign_indexes(t_stack *a, int *arr)
 		i = i->next;
 	}
 	print_stack_with_final_indexes(a);
+}
+
+void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
+{
+	int		max;
+	int		first;
+
+	max = a->top->value;
+	first = max;
+	printf("First num: %d\n", first);
+	ps_rx(a, b, RA);
+	while (a->top && a->size >= 5 && a->top->value != first)
+	{
+		if (a->top->value < max)
+		{
+			printf("FOUND LESS: (first <-> %d) - (current <-> %d)\n", first, a->top->value);
+			ps_px(a, b, PB);
+		}
+		else
+		{
+			ps_rx(a, b, RA);
+			max = a->top->value;
+		}
+	}
 }
