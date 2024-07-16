@@ -34,6 +34,7 @@ int main(int argc, char *argv[]) {
     }
     ps_free_stack(&stack_a);
     ps_free_stack(&stack_b);
+	free(arr);
     return 0;
 }
 
