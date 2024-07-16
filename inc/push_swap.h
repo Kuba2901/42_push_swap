@@ -13,6 +13,7 @@
 
 typedef struct s_node {
     int value;
+	int	final_index;
     struct s_node *next;
     struct s_node *prev;
 } t_node;
@@ -23,30 +24,27 @@ typedef struct s_stack {
     int size;
 } t_stack;
 
-int		pop(t_stack *stack);
-void	push(t_stack *stack, int value);
-void	push_to(t_stack *src, t_stack *dst);
-void	reverse_rotate(t_stack *stack);
-void	rotate(t_stack *stack);
-void	swap(t_stack *stack);
-int		is_valid_integer(const char *str);
-int		has_duplicates(t_stack *stack);
-void	sort_three(t_stack *stack);
-void	sort(t_stack *a, t_stack *b);
+int		ps_stack_pop(t_stack *stack);
+void	ps_stack_push(t_stack *stack, int value);
+void	ps_px(t_stack *src, t_stack *dst);
+void	ps_rrx(t_stack *stack);
+void	ps_rx(t_stack *stack);
+void	ps_sx(t_stack *stack);
+int		ps_is_valid_integer(const char *str);
+int		ps_has_duplicates(t_stack *stack);
+void	ps_sort_three(t_stack *stack);
+void	ps_main_sort(t_stack *a, t_stack *b);
 void	print_stacks(t_stack *a, t_stack *b);
 void	print_stack(t_stack *stack);
 void	print_operation(const char *op);
-int		get_min(t_stack *stack);
-void	free_stack(t_stack *stack);
-int		get_stack_len(t_stack *stack);
-void	sort_four(t_stack *a, t_stack *b);
-int		is_sorted(t_stack *stack);
+int		ps_get_min(t_stack *stack);
+void	ps_free_stack(t_stack *stack);
+int		ps_get_stack_len(t_stack *stack);
+void	ps_sort_four(t_stack *a, t_stack *b);
+int		ps_is_sorted(t_stack *stack);
 void	ps_sort_small(t_stack *a, t_stack *b);
-void	sort_five(t_stack *a, t_stack *b);
-int		get_min_index(t_stack *stack);
-int		quick_sort_b(t_stack *a, t_stack *b, int len);
-int		quick_sort_a(t_stack *a, t_stack *b, int len);
-int		find_median(t_stack *stack, int len);
-int		*create_sorted_array(t_stack *stack, int len);
-void	bubble_sort(int *arr, int size);
+void	ps_sort_five(t_stack *a, t_stack *b);
+int		ps_get_min_index(t_stack *stack);
+void	ps_sort_int_array(int *arr, int arr_size);
+int		*ps_dup_stack(t_stack *stack);
 #endif

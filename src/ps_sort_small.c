@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:45:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/15 17:01:21 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:43:37 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,77 +16,87 @@ void	ps_sort_small(t_stack *a, t_stack *b)
 {
 	int	len_a;
 	
-	len_a = get_stack_len(a);
+	len_a = ps_get_stack_len(a);
 	if (len_a == 3)
-		sort_three(a);
+		ps_sort_three(a);
 	else if (len_a == 4)
-		sort_four(a, b);
+		ps_sort_four(a, b);
 	else
-		sort_five(a, b);
+		ps_sort_five(a, b);
 }
 
-void	sort_four(t_stack *a, t_stack *b)
+void	ps_sort_four(t_stack *a, t_stack *b)
 {
 	int	min_index;
 
-	if (is_sorted(a))
+	if (ps_is_sorted(a))
 		return;
-	min_index = get_min_index(a);
+	min_index = ps_get_min_index(a);
+	printf("Min index (SORT 4): %d <-> %d\n", min_index, ps_get_min(a));
 	if (min_index == 1)
 	{
-		rotate(a);
+		ps_rx(a);
 		print_operation("RA");
 	}
 	else if (min_index == 2)
 	{
 		while (min_index-- > 0)
 		{
-			rotate(a);
+			ps_rx(a);
 			print_operation("RA");
 		}
 	}
-	else
+	else if (min_index == 3)
 	{
-		reverse_rotate(a);
-		print_operation("RA");
+		ps_rrx(a);
+		print_operation("RRA");
 	}
-	if (is_sorted(a))
+	if (ps_is_sorted(a))
 		return;
-	push_to(a, b);
+	ps_px(a, b);
 	print_operation("PB");
-	sort_three(a);
-	push_to(b, a);
+	print_operation("PRINTING AFTER INITIAL PUSH (SORT 4)");
+	print_stacks(a, b);
+	ps_sort_three(a);
+	print_operation("PRINTING AFTER SORT 3");
+	print_stacks(a, b);
+	ps_px(b, a);
 	print_operation("PA");
 }
 
-void	sort_five(t_stack *a, t_stack *b)
+void	ps_sort_five(t_stack *a, t_stack *b)
 {
 	int	min_index;
 
-	min_index = get_min_index(a);
+	min_index = ps_get_min_index(a);
+	printf("Min index: %d <-> %d\n", min_index, ps_get_min(a));
 	if (min_index == 1)
 	{
-		rotate(a);
+		ps_rx(a);
 		print_operation("RA");
 	}
 	else if (min_index == 2 || min_index == 3)
 	{
 		while (min_index-- > 0)
 		{
-			rotate(a);
+			ps_rx(a);
 			print_operation("RA");
 		}
 	}
 	else
 	{
-		reverse_rotate(a);
+		ps_rrx(a);
 		print_operation("RRA");
 	}
-	if (is_sorted(a))
+	if (ps_is_sorted(a))
 		return ;
-	push_to(a, b);
+	ps_px(a, b);
 	print_operation("PB");
-	sort_four(a, b);
-	push_to(b, a);
+	print_operation("PRINTING AFTER PUSH");
+	print_stacks(a, b);
+	ps_sort_four(a, b);
+	print_operation("PRINTING AFTER 4 SORT");
+	print_stacks(a, b);
+	ps_px(b, a);
 	print_operation("PA");
 }

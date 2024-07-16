@@ -6,13 +6,13 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:55:26 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 16:07:05 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:22:31 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	reverse_rotate(t_stack *stack)
+void	ps_rrx(t_stack *stack)
 {
     t_node	*bottom_node;
 

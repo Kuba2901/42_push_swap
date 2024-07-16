@@ -6,13 +6,13 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:54:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 16:07:12 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:22:36 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void	rotate(t_stack *stack)
+void	ps_rx(t_stack *stack)
 {
     t_node	*top_node;
 

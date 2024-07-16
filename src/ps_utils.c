@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:58:41 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/15 17:01:36 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:24:10 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void print_operation(const char *op) {
     printf("%s\n", op);
 }
 
-int get_min(t_stack *stack) {
+int ps_get_min(t_stack *stack) {
     t_node	*current;
     int		min;
 	
@@ -92,13 +92,13 @@ int get_min(t_stack *stack) {
     return min;
 }
 
-void free_stack(t_stack *stack) {
+void ps_free_stack(t_stack *stack) {
     while (stack->size > 0) {
-        pop(stack);
+        ps_stack_pop(stack);
     }
 }
 
-int	get_stack_len(t_stack *stack)
+int	ps_get_stack_len(t_stack *stack)
 {
 	t_node	*node;
 	int		i;
@@ -112,7 +112,7 @@ int	get_stack_len(t_stack *stack)
     return (i);
 }
 
-int	is_sorted(t_stack *stack)
+int	ps_is_sorted(t_stack *stack)
 {
 	t_node	*node;
 	int		max;
@@ -129,7 +129,7 @@ int	is_sorted(t_stack *stack)
 	
 }
 
-int	get_min_index(t_stack *stack)
+int	ps_get_min_index(t_stack *stack)
 {
 	t_node	*current;
     int		min_index;

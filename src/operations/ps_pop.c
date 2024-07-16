@@ -6,13 +6,13 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:52:14 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/13 18:45:36 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/16 15:22:14 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int pop(t_stack *stack)
+int ps_stack_pop(t_stack *stack)
 {
     t_node	*top_node;
     int		value;
