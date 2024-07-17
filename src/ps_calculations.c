@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/17 17:22:24 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:51:46 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 	}
 	// TODO: Verify these
 	node_b->ra = i;
-	node_b->rra = a->size - i;
+	node_b->rra = a->size - i - 1;
 	node_b->rb = node_b_pos;
-	node_b->rrb = b->size - node_b_pos;
+	node_b->rrb = b->size - node_b_pos - 1;
 }
 
 void	ps_assign_push_cost(t_stack *a, t_stack *b)
@@ -43,8 +43,29 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b)
 	while (node)
 	{
 		assign_node_cost(a, b, node, i);
-		printf("Assigned cost of (%d) from B to be (ra - %d, rra - %d)\n", node->value, node->ra, node->rra);
+		printf("Assigned cost of (%d) from B to be (ra - %d, rra - %d, rb - %d, rrb - %d)\n", node->value, node->ra, node->rra, node->rb, node->rrb);
+		printf("Total cost: %d\n", calculate_total_cost(node));
 		node = node->next;
 		i++;
 	}
+}
+
+int calculate_total_cost(t_node *node)
+{
+    int cost_rr;
+    int cost_rrr;
+    int cost_ra_rrb;
+    int cost_rra_rb;
+    int min_cost;
+
+	cost_rr = node->ra + node->rb;
+	cost_rrr = node->rra + node->rrb;
+	cost_ra_rrb = node->ra + node->rrb;
+	cost_rra_rb = node->rra + node->rb;
+	min_cost = cost_rr;
+    if (cost_rrr < min_cost) min_cost = cost_rrr;
+    if (cost_ra_rrb < min_cost) min_cost = cost_ra_rrb;
+    if (cost_rra_rb < min_cost) min_cost = cost_rra_rb;
+
+    return (min_cost);
 }
