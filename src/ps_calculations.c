@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/17 17:21:33 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:22:24 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b)
 	while (node)
 	{
 		assign_node_cost(a, b, node, i);
-		printf("Assigned cost of (%d) from B to be (%d)\n", node->value, node->ra);
+		printf("Assigned cost of (%d) from B to be (ra - %d, rra - %d)\n", node->value, node->ra, node->rra);
 		node = node->next;
 		i++;
 	}
