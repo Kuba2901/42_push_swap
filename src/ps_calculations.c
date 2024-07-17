@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/17 17:51:46 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/17 17:56:42 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,20 +52,17 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b)
 
 int calculate_total_cost(t_node *node)
 {
-    int cost_rr;
-    int cost_rrr;
-    int cost_ra_rrb;
-    int cost_rra_rb;
-    int min_cost;
-
-	cost_rr = node->ra + node->rb;
+    int	cost_rrr;
+    int	cost_ra_rrb;
+    int	cost_rra_rb;
+    int	min_cost;
+	
+	min_cost = node->ra + node->rb;
 	cost_rrr = node->rra + node->rrb;
 	cost_ra_rrb = node->ra + node->rrb;
 	cost_rra_rb = node->rra + node->rb;
-	min_cost = cost_rr;
     if (cost_rrr < min_cost) min_cost = cost_rrr;
     if (cost_ra_rrb < min_cost) min_cost = cost_ra_rrb;
     if (cost_rra_rb < min_cost) min_cost = cost_rra_rb;
-
     return (min_cost);
 }

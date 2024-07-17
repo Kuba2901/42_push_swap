@@ -21,6 +21,11 @@
 # define RRB 38
 # define RRR 39
 
+typedef struct	s_node_push_instructions
+{
+	int	cost;
+	int	*instructions;
+}	t_node_push_instructions;
 
 typedef struct s_node {
     int				value;
