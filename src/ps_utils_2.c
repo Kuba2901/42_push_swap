@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 18:06:05 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:32:12 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
 
 	max = a->top->value;
 	first = max;
-	printf("First num: %d\n", first);
 	ps_rx(a, b, RA);
 	while (a->top && a->size >= 5 && a->top->value != first)
 	{

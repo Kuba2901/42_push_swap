@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:51:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 15:51:25 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/17 16:29:15 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ void ps_stack_push(t_stack *stack, int value)
 void	ps_push_to(t_stack *src, t_stack *dst)
 {
     int	value;
+	int	final_index;
 
     if (src->size == 0)
 		return;
+	final_index = src->top->final_index;
 	value = ps_stack_pop(src);
     ps_stack_push(dst, value);
+	dst->top->final_index = final_index;
 }
 
 void	ps_px(t_stack *a, t_stack *b, int code)
