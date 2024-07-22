@@ -6,8 +6,15 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    t_stack stack_a = {NULL, NULL, 0};
-    t_stack stack_b = {NULL, NULL, 0};
+    t_stack stack_a;
+    t_stack stack_b;
+
+	stack_a.top = NULL;
+	stack_a.bottom = NULL;
+	stack_a.size = 0;
+	stack_b.top = NULL;
+	stack_b.bottom = NULL;
+	stack_b.size = 0;
 
     // Parse and validate input
     for (int i = argc - 1; i > 0; i--) {
@@ -27,18 +34,22 @@ int main(int argc, char *argv[]) {
 	int	*arr = ps_dup_stack(&stack_a);
 	ps_sort_int_array(arr, stack_a.size);
 	ps_assign_indexes(&stack_a, arr);
-	print_operation("BEFORE PUSHING OUT OF SEQUENCE");
-	print_stacks(&stack_a, &stack_b);
 	ps_push_out_of_sequence(&stack_a, &stack_b);
-	print_operation("PUSHED OUT OF SEQUENCE");
-	print_stacks(&stack_a, &stack_b);
-	ps_assign_push_cost(&stack_a, &stack_b);
-    ps_main_sort(&stack_a, &stack_b);
+	ps_sort_small(&stack_a, &stack_b);
+	while (stack_b.size)
+	{
+		ps_assign_push_cost(&stack_a, &stack_b);
+		push_cheapest(&stack_a, &stack_b);
+	}
+	int	i = stack_a.size;
+    while (!ps_is_sorted(&stack_a) && i--)
+		ps_rx(&stack_a, &stack_b, RA);
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");
     } else {
         printf("Error: The stack is not correctly sorted.\n");
     }
+	print_stacks(&stack_a, &stack_b);
     ps_free_stack(&stack_a);
     ps_free_stack(&stack_b);
 	free(arr);

@@ -20,6 +20,9 @@
 # define RRA 37
 # define RRB 38
 # define RRR 39
+# define RA_RB 50
+# define RA_RRB 51
+# define RRA_RB 52
 
 typedef struct	s_node_push_instructions
 {
@@ -40,10 +43,18 @@ typedef struct s_node {
     struct s_node	*prev;
 } t_node;
 
+typedef struct s_instructions
+{
+	int	code;
+	int	cost;
+}	t_instructions;
+
 typedef struct s_stack {
     t_node *top;
     t_node *bottom;
     int size;
+	t_node	*min;
+	t_instructions min_instructions;
 } t_stack;
 
 int		ps_stack_pop(t_stack *stack);
@@ -76,5 +87,6 @@ int		*ps_dup_stack(t_stack *stack);
 void	ps_assign_indexes(t_stack *a, int *arr);
 void	ps_assign_push_cost(t_stack *a, t_stack *b);
 void	ps_push_out_of_sequence(t_stack *a, t_stack *b);
-int		calculate_total_cost(t_node *node);
+t_instructions	calculate_total_cost(t_node *node);
+void	push_cheapest(t_stack *a, t_stack *b);
 #endif
