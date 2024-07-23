@@ -1,0 +1,1720 @@
+-199 -190 -183 -178 -165 -143 -116 -102 -95 -89 -34 -26 -18 -7 36 40 67 85 87 92 109 130 144 182 
+Value: (87), final index: (18)
+Value: (-34), final index: (10)
+Value: (-26), final index: (11)
+Value: (40), final index: (15)
+Value: (-102), final index: (7)
+Value: (-89), final index: (9)
+Value: (-18), final index: (12)
+Value: (-183), final index: (2)
+Value: (-143), final index: (5)
+Value: (85), final index: (17)
+Value: (144), final index: (22)
+Value: (130), final index: (21)
+Value: (92), final index: (19)
+Value: (-199), final index: (0)
+Value: (-95), final index: (8)
+Value: (-7), final index: (13)
+Value: (-190), final index: (1)
+Value: (-178), final index: (3)
+Value: (-116), final index: (6)
+Value: (-165), final index: (4)
+Value: (36), final index: (14)
+Value: (109), final index: (20)
+Value: (182), final index: (23)
+Value: (67), final index: (16)
+RA
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+RA
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+PB
+RA
+RA
+PB
+PRINTING AFTER PUSH
+
+--- Stack State ---
+A      | B
+------+------
+  87 |   67
+ 144 |   36
+ 109 | -165
+ 182 | -116
+     | -178
+     | -190
+     |   -7
+     |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+SA
+PA
+PRINTING AFTER 4 SORT
+
+--- Stack State ---
+A      | B
+------+------
+  87 |   67
+ 109 |   36
+ 144 | -165
+ 182 | -116
+     | -178
+     | -190
+     |   -7
+     |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Minimum number: 67, index in stack: 0
+Minimum number: 36, index in stack: 0
+Minimum number: -165, index in stack: 0
+Minimum number: -116, index in stack: 0
+Minimum number: -178, index in stack: 0
+Minimum number: -190, index in stack: 0
+Minimum number: -7, index in stack: 0
+Minimum number: -95, index in stack: 0
+Minimum number: -199, index in stack: 0
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (1) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (2) before num: 144
+Minimum number: 85, index in stack: 0
+Minimum number: -143, index in stack: 0
+Minimum number: -183, index in stack: 0
+Minimum number: -18, index in stack: 0
+Minimum number: -89, index in stack: 0
+Minimum number: -102, index in stack: 0
+Minimum number: 40, index in stack: 0
+Minimum number: -26, index in stack: 0
+Minimum number: -34, index in stack: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  87 |   67
+ 109 |   36
+ 144 | -165
+ 182 | -116
+     | -178
+     | -190
+     |   -7
+     |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Cheapest num: 67 <-> cost: 0 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 3 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  67 |   36
+  87 | -165
+ 109 | -116
+ 144 | -178
+ 182 | -190
+     |   -7
+     |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Minimum number: 36, index in stack: 0
+Minimum number: -165, index in stack: 0
+Minimum number: -116, index in stack: 0
+Minimum number: -178, index in stack: 0
+Minimum number: -190, index in stack: 0
+Minimum number: -7, index in stack: 0
+Minimum number: -95, index in stack: 0
+Minimum number: -199, index in stack: 0
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (2) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (3) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (1) before num: 87
+Minimum number: -143, index in stack: 0
+Minimum number: -183, index in stack: 0
+Minimum number: -18, index in stack: 0
+Minimum number: -89, index in stack: 0
+Minimum number: -102, index in stack: 0
+Minimum number: 40, index in stack: 0
+Minimum number: -26, index in stack: 0
+Minimum number: -34, index in stack: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  67 |   36
+  87 | -165
+ 109 | -116
+ 144 | -178
+ 182 | -190
+     |   -7
+     |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Cheapest num: 36 <-> cost: 1 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 4 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  36 | -165
+  67 | -116
+  87 | -178
+ 109 | -190
+ 144 |   -7
+ 182 |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Minimum number: -165, index in stack: 0
+Minimum number: -116, index in stack: 0
+Minimum number: -178, index in stack: 0
+Minimum number: -190, index in stack: 0
+Minimum number: -7, index in stack: 0
+Minimum number: -95, index in stack: 0
+Minimum number: -199, index in stack: 0
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (3) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (4) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (2) before num: 87
+Minimum number: -143, index in stack: 0
+Minimum number: -183, index in stack: 0
+Minimum number: -18, index in stack: 0
+Minimum number: -89, index in stack: 0
+Minimum number: -102, index in stack: 0
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (1) before num: 67
+Minimum number: -26, index in stack: 0
+Minimum number: -34, index in stack: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  36 | -165
+  67 | -116
+  87 | -178
+ 109 | -190
+ 144 |   -7
+ 182 |  -95
+     | -199
+     |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Cheapest num: -165 <-> cost: 1 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 5 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-165 | -116
+  36 | -178
+  67 | -190
+  87 |   -7
+ 109 |  -95
+ 144 | -199
+ 182 |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -116 <-> node_b->final_index: 6
+Found breakpoint for -116 at (1) before num: 36
+Minimum number: -178, index in stack: 0
+Minimum number: -190, index in stack: 0
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -7 <-> node_b->final_index: 13
+Found breakpoint for -7 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -95 <-> node_b->final_index: 8
+Found breakpoint for -95 at (1) before num: 36
+Minimum number: -199, index in stack: 0
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (4) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (5) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (3) before num: 87
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -143 <-> node_b->final_index: 5
+Found breakpoint for -143 at (1) before num: 36
+Minimum number: -183, index in stack: 0
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (1) before num: 36
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (2) before num: 67
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (1) before num: 36
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-165 | -116
+  36 | -178
+  67 | -190
+  87 |   -7
+ 109 |  -95
+ 144 | -199
+ 182 |   92
+     |  130
+     |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Cheapest num: -116 <-> cost: 1 and code: 32
+Instructions - ra: 1 <-> rb: 0 <-> rra: 5 <-> rrb: 0
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-116 | -178
+  36 | -190
+  67 |   -7
+  87 |  -95
+ 109 | -199
+ 144 |   92
+ 182 |  130
+-165 |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Minimum number: -178, index in stack: 7
+Minimum number: -190, index in stack: 7
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -7 <-> node_b->final_index: 13
+Found breakpoint for -7 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -95 <-> node_b->final_index: 8
+Found breakpoint for -95 at (1) before num: 36
+Minimum number: -199, index in stack: 7
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (4) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (5) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (3) before num: 87
+IS TOP
+Found breakpoint for -143 at (0) before num: -116
+Minimum number: -183, index in stack: 7
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (1) before num: 36
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (2) before num: 67
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (1) before num: 36
+IS NOT TOP
+current node_a: 36 <-> node_a->final_index: 14
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (1) before num: 36
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-116 | -178
+  36 | -190
+  67 |   -7
+  87 |  -95
+ 109 | -199
+ 144 |   92
+ 182 |  130
+-165 |   85
+     | -143
+     | -183
+     |  -18
+     |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+------+------
+
+Cheapest num: -7 <-> cost: 3 and code: 32
+Instructions - ra: 1 <-> rb: 2 <-> rra: 6 <-> rrb: 14
+RR
+RB
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  -7 |  -95
+  36 | -199
+  67 |   92
+  87 |  130
+ 109 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+     | -178
+     | -190
+------+------
+
+IS TOP
+Found breakpoint for -95 at (0) before num: -7
+Minimum number: -199, index in stack: 7
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (4) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (5) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (3) before num: 87
+IS NOT TOP
+current node_a: -116 <-> node_a->final_index: 6
+current node_b: -143 <-> node_b->final_index: 5
+Found breakpoint for -143 at (8) before num: -116
+Minimum number: -183, index in stack: 7
+IS TOP
+Found breakpoint for -18 at (0) before num: -7
+IS TOP
+Found breakpoint for -89 at (0) before num: -7
+IS TOP
+Found breakpoint for -102 at (0) before num: -7
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (2) before num: 67
+IS TOP
+Found breakpoint for -26 at (0) before num: -7
+IS TOP
+Found breakpoint for -34 at (0) before num: -7
+Minimum number: -178, index in stack: 7
+Minimum number: -190, index in stack: 7
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  -7 |  -95
+  36 | -199
+  67 |   92
+  87 |  130
+ 109 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+     | -102
+     |   40
+     |  -26
+     |  -34
+     | -178
+     | -190
+------+------
+
+Cheapest num: -95 <-> cost: 4 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 8 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -95 | -199
+  -7 |   92
+  36 |  130
+  67 |   85
+  87 | -143
+ 109 | -183
+ 144 |  -18
+ 182 |  -89
+-165 | -102
+-116 |   40
+     |  -26
+     |  -34
+     | -178
+     | -190
+------+------
+
+Minimum number: -199, index in stack: 8
+IS NOT TOP
+current node_a: 109 <-> node_a->final_index: 20
+current node_b: 92 <-> node_b->final_index: 19
+Found breakpoint for 92 at (5) before num: 109
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (6) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (4) before num: 87
+IS NOT TOP
+current node_a: -116 <-> node_a->final_index: 6
+current node_b: -143 <-> node_b->final_index: 5
+Found breakpoint for -143 at (9) before num: -116
+Minimum number: -183, index in stack: 8
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (1) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (1) before num: -7
+IS TOP
+Found breakpoint for -102 at (0) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (3) before num: 67
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (1) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (1) before num: -7
+Minimum number: -178, index in stack: 8
+Minimum number: -190, index in stack: 8
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -95 | -199
+  -7 |   92
+  36 |  130
+  67 |   85
+  87 | -143
+ 109 | -183
+ 144 |  -18
+ 182 |  -89
+-165 | -102
+-116 |   40
+     |  -26
+     |  -34
+     | -178
+     | -190
+------+------
+
+Cheapest num: 92 <-> cost: 6 and code: 32
+Instructions - ra: 5 <-> rb: 1 <-> rra: 4 <-> rrb: 13
+RR
+RA
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  92 |  130
+ 109 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+ -95 | -102
+  -7 |   40
+  36 |  -26
+  67 |  -34
+  87 | -178
+     | -190
+     | -199
+------+------
+
+IS NOT TOP
+current node_a: 144 <-> node_a->final_index: 22
+current node_b: 130 <-> node_b->final_index: 21
+Found breakpoint for 130 at (2) before num: 144
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (10) before num: 87
+IS NOT TOP
+current node_a: -116 <-> node_a->final_index: 6
+current node_b: -143 <-> node_b->final_index: 5
+Found breakpoint for -143 at (5) before num: -116
+Minimum number: -183, index in stack: 4
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (7) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (7) before num: -7
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (6) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (9) before num: 67
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (7) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (7) before num: -7
+Minimum number: -178, index in stack: 4
+Minimum number: -190, index in stack: 4
+Minimum number: -199, index in stack: 4
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  92 |  130
+ 109 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+ -95 | -102
+  -7 |   40
+  36 |  -26
+  67 |  -34
+  87 | -178
+     | -190
+     | -199
+------+------
+
+Cheapest num: 130 <-> cost: 8 and code: 32
+Instructions - ra: 2 <-> rb: 0 <-> rra: 8 <-> rrb: 0
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ 130 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+ -95 | -102
+  -7 |   40
+  36 |  -26
+  67 |  -34
+  87 | -178
+  92 | -190
+ 109 | -199
+------+------
+
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (9) before num: 87
+IS NOT TOP
+current node_a: -116 <-> node_a->final_index: 6
+current node_b: -143 <-> node_b->final_index: 5
+Found breakpoint for -143 at (4) before num: -116
+Minimum number: -183, index in stack: 3
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (6) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (6) before num: -7
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (5) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (8) before num: 67
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (6) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (6) before num: -7
+Minimum number: -178, index in stack: 3
+Minimum number: -190, index in stack: 3
+Minimum number: -199, index in stack: 3
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ 130 |   85
+ 144 | -143
+ 182 | -183
+-165 |  -18
+-116 |  -89
+ -95 | -102
+  -7 |   40
+  36 |  -26
+  67 |  -34
+  87 | -178
+  92 | -190
+ 109 | -199
+------+------
+
+Cheapest num: -143 <-> cost: 5 and code: 32
+Instructions - ra: 4 <-> rb: 1 <-> rra: 7 <-> rrb: 11
+RR
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-143 | -183
+-116 |  -18
+ -95 |  -89
+  -7 | -102
+  36 |   40
+  67 |  -26
+  87 |  -34
+  92 | -178
+ 109 | -190
+ 130 | -199
+ 144 |   85
+ 182 | 
+-165 | 
+------+------
+
+Minimum number: -183, index in stack: 12
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -18 <-> node_b->final_index: 12
+Found breakpoint for -18 at (3) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -89 <-> node_b->final_index: 9
+Found breakpoint for -89 at (3) before num: -7
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (2) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (5) before num: 67
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (3) before num: -7
+IS NOT TOP
+current node_a: -7 <-> node_a->final_index: 13
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (3) before num: -7
+Minimum number: -178, index in stack: 12
+Minimum number: -190, index in stack: 12
+Minimum number: -199, index in stack: 12
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (6) before num: 87
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-143 | -183
+-116 |  -18
+ -95 |  -89
+  -7 | -102
+  36 |   40
+  67 |  -26
+  87 |  -34
+  92 | -178
+ 109 | -190
+ 130 | -199
+ 144 |   85
+ 182 | 
+-165 | 
+------+------
+
+Cheapest num: -18 <-> cost: 4 and code: 32
+Instructions - ra: 3 <-> rb: 1 <-> rra: 9 <-> rrb: 10
+RR
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -18 |  -89
+  -7 | -102
+  36 |   40
+  67 |  -26
+  87 |  -34
+  92 | -178
+ 109 | -190
+ 130 | -199
+ 144 |   85
+ 182 | -183
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+------+------
+
+IS TOP
+Found breakpoint for -89 at (0) before num: -18
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (13) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (3) before num: 67
+IS TOP
+Found breakpoint for -26 at (0) before num: -18
+IS TOP
+Found breakpoint for -34 at (0) before num: -18
+Minimum number: -178, index in stack: 10
+Minimum number: -190, index in stack: 10
+Minimum number: -199, index in stack: 10
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (4) before num: 87
+Minimum number: -183, index in stack: 10
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -18 |  -89
+  -7 | -102
+  36 |   40
+  67 |  -26
+  87 |  -34
+  92 | -178
+ 109 | -190
+ 130 | -199
+ 144 |   85
+ 182 | -183
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+------+------
+
+Cheapest num: -89 <-> cost: 5 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 13 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -89 | -102
+ -18 |   40
+  -7 |  -26
+  36 |  -34
+  67 | -178
+  87 | -190
+  92 | -199
+ 109 |   85
+ 130 | -183
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+------+------
+
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (14) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (4) before num: 67
+IS NOT TOP
+current node_a: -18 <-> node_a->final_index: 12
+current node_b: -26 <-> node_b->final_index: 11
+Found breakpoint for -26 at (1) before num: -18
+IS NOT TOP
+current node_a: -18 <-> node_a->final_index: 12
+current node_b: -34 <-> node_b->final_index: 10
+Found breakpoint for -34 at (1) before num: -18
+Minimum number: -178, index in stack: 11
+Minimum number: -190, index in stack: 11
+Minimum number: -199, index in stack: 11
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (5) before num: 87
+Minimum number: -183, index in stack: 11
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -89 | -102
+ -18 |   40
+  -7 |  -26
+  36 |  -34
+  67 | -178
+  87 | -190
+  92 | -199
+ 109 |   85
+ 130 | -183
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+------+------
+
+Cheapest num: -26 <-> cost: 3 and code: 32
+Instructions - ra: 1 <-> rb: 2 <-> rra: 13 <-> rrb: 7
+RR
+RB
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -26 |  -34
+ -18 | -178
+  -7 | -190
+  36 | -199
+  67 |   85
+  87 | -183
+  92 | -102
+ 109 |   40
+ 130 | 
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+------+------
+
+IS TOP
+Found breakpoint for -34 at (0) before num: -26
+Minimum number: -178, index in stack: 11
+Minimum number: -190, index in stack: 11
+Minimum number: -199, index in stack: 11
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (5) before num: 87
+Minimum number: -183, index in stack: 11
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (14) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (4) before num: 67
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -26 |  -34
+ -18 | -178
+  -7 | -190
+  36 | -199
+  67 |   85
+  87 | -183
+  92 | -102
+ 109 |   40
+ 130 | 
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+------+------
+
+Cheapest num: -34 <-> cost: 4 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 15 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -34 | -178
+ -26 | -190
+ -18 | -199
+  -7 |   85
+  36 | -183
+  67 | -102
+  87 |   40
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+------+------
+
+Minimum number: -178, index in stack: 12
+Minimum number: -190, index in stack: 12
+Minimum number: -199, index in stack: 12
+IS NOT TOP
+current node_a: 87 <-> node_a->final_index: 18
+current node_b: 85 <-> node_b->final_index: 17
+Found breakpoint for 85 at (6) before num: 87
+Minimum number: -183, index in stack: 12
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (15) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (5) before num: 67
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+ -34 | -178
+ -26 | -190
+ -18 | -199
+  -7 |   85
+  36 | -183
+  67 | -102
+  87 |   40
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+------+------
+
+Cheapest num: 85 <-> cost: 9 and code: 32
+Instructions - ra: 6 <-> rb: 3 <-> rra: 10 <-> rrb: 4
+RR
+RR
+RR
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  85 | -183
+  87 | -102
+  92 |   40
+ 109 | -178
+ 130 | -190
+ 144 | -199
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+------+------
+
+Minimum number: -183, index in stack: 7
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (10) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (17) before num: 67
+Minimum number: -178, index in stack: 7
+Minimum number: -190, index in stack: 7
+Minimum number: -199, index in stack: 7
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  85 | -183
+  87 | -102
+  92 |   40
+ 109 | -178
+ 130 | -190
+ 144 | -199
+ 182 | 
+-165 | 
+-143 | 
+-116 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+------+------
+
+Cheapest num: -183 <-> cost: 16 and code: 32
+Instructions - ra: 7 <-> rb: 0 <-> rra: 10 <-> rrb: 0
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-183 | -102
+-165 |   40
+-143 | -178
+-116 | -190
+ -95 | -199
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (4) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (11) before num: 67
+IS NOT TOP
+current node_a: -165 <-> node_a->final_index: 4
+current node_b: -178 <-> node_b->final_index: 3
+Found breakpoint for -178 at (1) before num: -165
+Minimum number: -190, index in stack: 0
+Minimum number: -199, index in stack: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-183 | -102
+-165 |   40
+-143 | -178
+-116 | -190
+ -95 | -199
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
+Cheapest num: -178 <-> cost: 3 and code: 32
+Instructions - ra: 1 <-> rb: 2 <-> rra: 17 <-> rrb: 3
+RR
+RB
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-178 | -190
+-165 | -199
+-143 | -102
+-116 |   40
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+------+------
+
+Minimum number: -190, index in stack: 19
+Minimum number: -199, index in stack: 19
+IS NOT TOP
+current node_a: -95 <-> node_a->final_index: 8
+current node_b: -102 <-> node_b->final_index: 7
+Found breakpoint for -102 at (4) before num: -95
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (11) before num: 67
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-178 | -190
+-165 | -199
+-143 | -102
+-116 |   40
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+------+------
+
+Cheapest num: -102 <-> cost: 6 and code: 32
+Instructions - ra: 4 <-> rb: 2 <-> rra: 15 <-> rrb: 2
+RR
+RR
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-102 |   40
+ -95 | -190
+ -89 | -199
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+------+------
+
+IS NOT TOP
+current node_a: 67 <-> node_a->final_index: 16
+current node_b: 40 <-> node_b->final_index: 15
+Found breakpoint for 40 at (8) before num: 67
+Minimum number: -190, index in stack: 16
+Minimum number: -199, index in stack: 16
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-102 |   40
+ -95 | -190
+ -89 | -199
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+------+------
+
+Cheapest num: 40 <-> cost: 14 and code: 32
+Instructions - ra: 8 <-> rb: 0 <-> rra: 12 <-> rrb: 0
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  40 | -190
+  67 | -199
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+------+------
+
+Minimum number: -190, index in stack: 9
+Minimum number: -199, index in stack: 9
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+  40 | -190
+  67 | -199
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+------+------
+
+Cheapest num: -190 <-> cost: 17 and code: 32
+Instructions - ra: 9 <-> rb: 0 <-> rra: 12 <-> rrb: 0
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+RA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-190 | -199
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  40 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
+Minimum number: -199, index in stack: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-190 | -199
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  40 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
+Cheapest num: -199 <-> cost: 10 and code: 32
+Instructions - ra: 0 <-> rb: 0 <-> rra: 22 <-> rrb: 0
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A      | B
+------+------
+-199 | 
+-190 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  40 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
+The stack is correctly sorted.
+
+--- Stack State ---
+A      | B
+------+------
+-199 | 
+-190 | 
+-183 | 
+-178 | 
+-165 | 
+-143 | 
+-116 | 
+-102 | 
+ -95 | 
+ -89 | 
+ -34 | 
+ -26 | 
+ -18 | 
+  -7 | 
+  36 | 
+  40 | 
+  67 | 
+  85 | 
+  87 | 
+  92 | 
+ 109 | 
+ 130 | 
+ 144 | 
+ 182 | 
+------+------
+
