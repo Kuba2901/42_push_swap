@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:45:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/22 17:00:41 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/23 15:00:20 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	ps_sort_five(t_stack *a, t_stack *b)
 	int	min_index;
 
 	min_index = ps_get_min_index(a);
-	printf("Min index: %d <-> %d\n", min_index, ps_get_min(a));
 	if (min_index == 1)
 	{
 		ps_rotate(a);
