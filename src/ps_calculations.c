@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/22 16:51:23 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:16:10 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,26 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 	while (node_a)
 	{
 		if (node_a->final_index > node_b->final_index)
-			break ;
+		{
+			if (node_a == a->top)
+			{
+				if (a->bottom->final_index < node_b->final_index)
+				{
+					printf("IS TOP\n");
+					printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
+					break ;
+				}
+			}
+			else if (node_a->prev->final_index < node_b->final_index)
+			{	
+				printf("IS NOT TOP\n");
+				printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
+				break ;
+			}
+		}
 		i++;
 		node_a = node_a->next;
 	}
-	// TODO: Verify these
 	node_b->ra = i;
 	node_b->rra = a->size - i - 1;
 	node_b->rb = node_b_pos;
@@ -64,10 +79,9 @@ void	push_cheapest(t_stack *a, t_stack *b)
 	print_operation("STACKS BEFORE PUSHING CHEAPEST");
 	print_stacks(a, b);
 	printf("Cheapest num: %d <-> cost: %d and code: %d\n", min->value, b->min_instructions.cost, b->min_instructions.code);
+	printf("Instructions - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", min->ra, min->rb, min->rra, min->rrb);
 	if (b->min_instructions.code == RR)
 	{
-		printf("CODE: RR\n");
-		printf("Instructions - ra: %d <-> rb: %d\n", min->ra, min->rb);
 		while (min->ra > 0 && min->rb > 0)
 		{
 			ps_rx(a, b, RR);
@@ -111,30 +125,30 @@ void	push_cheapest(t_stack *a, t_stack *b)
 
 t_instructions calculate_total_cost(t_node *node)
 {
-    int				cost_rrr;
-    int				cost_ra_rrb;
-    int				cost_rra_rb;
+    // int				cost_rrr;
+    // int				cost_ra_rrb;
+    // int				cost_rra_rb;
 	t_instructions	instructions;
 	
 	instructions.code = RR;
 	instructions.cost = node->ra + node->rb;
-	cost_rrr = node->rra + node->rrb;
-	cost_ra_rrb = node->ra + node->rrb;
-	cost_rra_rb = node->rra + node->rb;
-    if (cost_rrr < instructions.cost)
-	{
-		instructions.code = RRR;
-		instructions.cost = cost_rrr;
-	}
-    if (cost_ra_rrb < instructions.cost)
-	{
-		instructions.code = RA_RRB;
-		instructions.cost = cost_ra_rrb;
-	}
-    if (cost_rra_rb < instructions.cost)
-	{
-		instructions.code = RRA_RB;
-		instructions.cost = cost_rra_rb;
-	}
+	// cost_rrr = node->rra + node->rrb;
+	// cost_ra_rrb = node->ra + node->rrb;
+	// cost_rra_rb = node->rra + node->rb;
+    // if (cost_rrr < instructions.cost)
+	// {
+	// 	instructions.code = RRR;
+	// 	instructions.cost = cost_rrr;
+	// }
+    // if (cost_ra_rrb < instructions.cost)
+	// {
+	// 	instructions.code = RA_RRB;
+	// 	instructions.cost = cost_ra_rrb;
+	// }
+    // if (cost_rra_rb < instructions.cost)
+	// {
+	// 	instructions.code = RRA_RB;
+	// 	instructions.cost = cost_rra_rb;
+	// }
     return (instructions);
 }
