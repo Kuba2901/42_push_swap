@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 14:16:10 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:28:38 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 			else if (node_a->prev->final_index < node_b->final_index)
 			{	
 				printf("IS NOT TOP\n");
+				printf("current node_a: %d <-> node_a->final_index: %d\n", node_a->value, node_a->final_index);
+				printf("current node_b: %d <-> node_b->final_index: %d\n", node_b->value, node_b->final_index);
 				printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
 				break ;
 			}

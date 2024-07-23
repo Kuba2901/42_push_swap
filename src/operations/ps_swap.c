@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:53:59 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/17 16:30:36 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:30:52 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ps_swap(t_stack *stack)
 	final_index = stack->top->final_index;
 	temp = stack->top->value;
     stack->top->value = stack->top->next->value;
+	stack->top->final_index = stack->top->next->final_index;
     stack->top->next->value = temp;
 	stack->top->next->final_index = final_index;
 }
