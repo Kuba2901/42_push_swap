@@ -6,11 +6,89 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 14:28:38 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/23 14:57:20 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+int	is_min(t_stack *a, t_node *node_b)
+{
+	t_node	*temp;
+
+	temp = a->top;
+	while (temp)
+	{
+		if (temp->final_index < node_b->final_index)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+int	is_max(t_stack *a, t_node *node_b)
+{
+	t_node	*temp;
+
+	temp = a->top;
+	while (temp)
+	{
+		if (temp->final_index > node_b->final_index)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+int	min_index(t_stack *a)
+{
+	t_node	*temp;
+	t_node	*min_node;
+	int		min_index;
+	int		i;
+
+	temp = a->top;
+	min_index = 0;
+	min_node = a->top;
+	i = 0;
+	while (temp)
+	{
+		if (temp->final_index < min_node->final_index)
+		{
+			min_index = i;
+			min_node = temp;
+		}
+		i++;
+		temp = temp->next;
+	}
+	return (min_index);
+}
+
+int	max_index(t_stack *a)
+{
+	t_node	*temp;
+	t_node	*max_node;
+	int		max_index;
+	int		i;
+
+	temp = a->top;
+	max_index = 0;
+	max_node = a->top;
+	i = 0;
+	while (temp)
+	{
+		if (temp->final_index > max_node->final_index)
+		{
+			max_index = i;
+			max_node = temp;
+		}
+		i++;
+		temp = temp->next;
+	}
+	if (max_index == a->size - 1)
+		return (0);
+	return (i);
+}
 
 static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_pos)
 {
@@ -21,7 +99,19 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 	i = 0;
 	while (node_a)
 	{
-		if (node_a->final_index > node_b->final_index)
+		if (is_min(a, node_b))
+		{
+			i = min_index(a);
+			printf("Minimum number: %d, index in stack: %d\n", node_b->value, i);
+			break ;
+		}
+		else if (is_max(a, node_b))
+		{
+			i = max_index(a);
+			printf("Maximum: %d\n", i);
+			break ;
+		}
+		else if (node_a->final_index > node_b->final_index)
 		{
 			if (node_a == a->top)
 			{

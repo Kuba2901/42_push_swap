@@ -41,7 +41,7 @@ int main(int argc, char *argv[]) {
 		ps_assign_push_cost(&stack_a, &stack_b);
 		push_cheapest(&stack_a, &stack_b);
 	}
-	int	i = stack_a.size;
+	int	i = stack_a.size + 10;
     while (!ps_is_sorted(&stack_a) && i--)
 		ps_rx(&stack_a, &stack_b, RA);
     if (ps_is_sorted(&stack_a)) {
