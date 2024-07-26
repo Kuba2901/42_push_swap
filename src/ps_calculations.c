@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 16:03:29 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/26 13:40:17 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,13 +102,11 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 		if (is_min(a, node_b))
 		{
 			i = min_index(a);
-			printf("Minimum number: %d, index in stack: %d\n", node_b->value, i);
 			break ;
 		}
 		else if (is_max(a, node_b))
 		{
 			i = max_index(a);
-			printf("Maximum: %d\n", i);
 			break ;
 		}
 		else if (node_a->final_index > node_b->final_index)
@@ -123,24 +121,22 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 				}
 			}
 			else if (node_a->prev->final_index < node_b->final_index)
-			{	
-				printf("IS NOT TOP\n");
-				printf("current node_a: %d <-> node_a->final_index: %d\n", node_a->value, node_a->final_index);
-				printf("current node_b: %d <-> node_b->final_index: %d\n", node_b->value, node_b->final_index);
-				printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
 				break ;
-			}
 		}
 		i++;
 		node_a = node_a->next;
 	}
 	node_b->ra = i;
-	node_b->rra = a->size - i - 1;
+	if (i == 0)
+		node_b->rra = 0;
+	else
+		node_b->rra = a->size - i + 1;
 	node_b->rb = node_b_pos;
 	if (node_b_pos == 0)
 		node_b->rrb = 0;
 	else
 		node_b->rrb = b->size - node_b_pos;
+	printf("Node (%d) - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", node_b->value, node_b->ra, node_b->rb, node_b->rra, node_b->rrb);
 }
 
 void	ps_assign_push_cost(t_stack *a, t_stack *b)
@@ -150,8 +146,9 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b)
 
 	i = 0;
 	node = b->top;
-	b->min = b->top;
-	b->min_instructions = calculate_total_cost(b->top);
+	assign_node_cost(a, b, node, 0);
+	b->min = node;
+	b->min_instructions = calculate_total_cost(node);
 	while (node)
 	{
 		assign_node_cost(a, b, node, i);
@@ -229,21 +226,21 @@ static int	ps_abs(int num)
 
 t_instructions calculate_total_cost(t_node *node)
 {
-    // int				cost_rrr;
+    int				cost_rrr;
     // int				cost_ra_rrb;
     // int				cost_rra_rb;
 	t_instructions	instructions;
 	
 	instructions.code = RR;
-	instructions.cost = ps_abs(node->ra + node->rb);
-	// cost_rrr = ps_abs(node->rra - node->rrb);
+	instructions.cost = ps_abs(node->ra - node->rb) + ((node->ra + node->rb / 2) + 1);
+	cost_rrr = ps_abs(node->rra - node->rrb) + ((node->rra + node->rrb / 2) + 1);
 	// cost_ra_rrb = node->ra + node->rrb;
 	// cost_rra_rb = node->rra + node->rb;
-    // if (cost_rrr < instructions.cost)
-	// {
-	// 	instructions.code = RRR;
-	// 	instructions.cost = cost_rrr;
-	// }
+    if (cost_rrr < instructions.cost)
+	{
+		instructions.code = RRR;
+		instructions.cost = cost_rrr;
+	}
     // if (cost_ra_rrb < instructions.cost)
 	// {
 	// 	instructions.code = RA_RRB;
