@@ -1,5 +1,22 @@
 #include <push_swap.h>
 
+int	choose_sorting_operation(t_stack stack)
+{
+	int	ra;
+	int	i;
+
+	ra = 0;
+	i = stack.size;
+	while (!ps_is_sorted(&stack) && i--)
+	{
+		ps_rx(&stack, NULL, RA);
+		ra++;
+	}
+	if (ra > stack.size / 2)
+		return (RA);
+	return (RRA);
+}
+
 int main(int argc, char *argv[]) {
     if (argc < 2) {
         fprintf(stderr, "Usage: %s <list of integers>\n", argv[0]);
@@ -42,8 +59,16 @@ int main(int argc, char *argv[]) {
 		push_cheapest(&stack_a, &stack_b);
 	}
 	int	i = stack_a.size + 10;
-    while (!ps_is_sorted(&stack_a) && i--)
+	// if (choose_sorting_operation(stack_a))
+	// {
+	while (!ps_is_sorted(&stack_a) && i--)
 		ps_rx(&stack_a, &stack_b, RA);
+	// }
+	// else
+	// {
+	// 	while (!ps_is_sorted(&stack_a) && i--)
+	// 		ps_rrx(&stack_a, &stack_b, RRA);
+	// }
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");
     } else {
