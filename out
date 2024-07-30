@@ -1,26 +1,21 @@
--98 -75 -71 -67 -42 -40 -17 30 32 35 59 94 
-Value: (94), final index: (11)
-Value: (-71), final index: (2)
-Value: (-98), final index: (0)
-Value: (-40), final index: (5)
-Value: (-67), final index: (3)
-Value: (35), final index: (9)
-Value: (59), final index: (10)
-Value: (-75), final index: (1)
-Value: (-17), final index: (6)
-Value: (32), final index: (8)
-Value: (30), final index: (7)
-Value: (-42), final index: (4)
+-82 -59 -28 -20 -4 7 21 53 75 76 
+Value: (75), final index: (8)
+Value: (21), final index: (6)
+Value: (-82), final index: (0)
+Value: (53), final index: (7)
+Value: (76), final index: (9)
+Value: (-4), final index: (4)
+Value: (-20), final index: (3)
+Value: (7), final index: (5)
+Value: (-59), final index: (1)
+Value: (-28), final index: (2)
 RA
 PB
 PB
 PB
-PB
-PB
-PB
-PB
 RA
-RA
+PB
+PB
 RA
 PB
 PRINTING AFTER PUSH
@@ -28,59 +23,50 @@ PRINTING AFTER PUSH
 --- Stack State ---
 A     | B
 -----+-----
- 94 | -42
--17 | -75
- 32 |  59
- 30 |  35
-    | -67
-    | -40
-    | -98
-    | -71
+-28 | -59
+ 75 | -20
+ 76 |  -4
+  7 |  53
+    | -82
+    |  21
 -----+-----
 
-RA
-SA
+RRA
 PA
 PRINTING AFTER 4 SORT
 
 --- Stack State ---
 A     | B
 -----+-----
--17 | -42
- 30 | -75
- 32 |  59
- 94 |  35
-    | -67
-    | -40
-    | -98
-    | -71
+-28 | -59
+  7 | -20
+ 75 |  -4
+ 76 |  53
+    | -82
+    |  21
 -----+-----
 
-Node (-42) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-Node (-42) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-Node (-75) - ra: 0 <-> rb: 1 <-> rra: 0 <-> rrb: 7
-Node (59) - ra: 3 <-> rb: 2 <-> rra: 2 <-> rrb: 6
-Node (35) - ra: 3 <-> rb: 3 <-> rra: 2 <-> rrb: 5
-Node (-67) - ra: 0 <-> rb: 4 <-> rra: 0 <-> rrb: 4
-Node (-40) - ra: 0 <-> rb: 5 <-> rra: 0 <-> rrb: 3
-Node (-98) - ra: 0 <-> rb: 6 <-> rra: 0 <-> rrb: 2
-Node (-71) - ra: 0 <-> rb: 7 <-> rra: 0 <-> rrb: 1
+Node (-59) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
+Node (-59) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
+Node (-20) - ra: 1 <-> rb: 1 <-> rra: 3 <-> rrb: 5
+Node (-4) - ra: 1 <-> rb: 2 <-> rra: 3 <-> rrb: 4
+Node (53) - ra: 2 <-> rb: 3 <-> rra: 2 <-> rrb: 3
+Node (-82) - ra: 0 <-> rb: 4 <-> rra: 0 <-> rrb: 2
+Node (21) - ra: 2 <-> rb: 5 <-> rra: 2 <-> rrb: 1
 STACKS BEFORE PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--17 | -42
- 30 | -75
- 32 |  59
- 94 |  35
-    | -67
-    | -40
-    | -98
-    | -71
+-28 | -59
+  7 | -20
+ 75 |  -4
+ 76 |  53
+    | -82
+    |  21
 -----+-----
 
-Cheapest num: -42 <-> cost: 1 and code: 32
+Cheapest num: -59 <-> cost: 1 and code: 32
 Instructions - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
 PA
 STACKS AFTER PUSHING CHEAPEST
@@ -88,200 +74,187 @@ STACKS AFTER PUSHING CHEAPEST
 --- Stack State ---
 A     | B
 -----+-----
--42 | -75
--17 |  59
- 30 |  35
- 32 | -67
- 94 | -40
-    | -98
-    | -71
+-59 | -20
+-28 |  -4
+  7 |  53
+ 75 | -82
+ 76 |  21
 -----+-----
 
-Node (-75) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-Node (-75) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-Node (59) - ra: 4 <-> rb: 1 <-> rra: 2 <-> rrb: 6
-Node (35) - ra: 4 <-> rb: 2 <-> rra: 2 <-> rrb: 5
-Node (-67) - ra: 0 <-> rb: 3 <-> rra: 0 <-> rrb: 4
-Node (-40) - ra: 1 <-> rb: 4 <-> rra: 5 <-> rrb: 3
-Node (-98) - ra: 0 <-> rb: 5 <-> rra: 0 <-> rrb: 2
-Node (-71) - ra: 0 <-> rb: 6 <-> rra: 0 <-> rrb: 1
+Node (-20) - ra: 2 <-> rb: 0 <-> rra: 3 <-> rrb: 0
+Node (-20) - ra: 2 <-> rb: 0 <-> rra: 3 <-> rrb: 0
+Node (-4) - ra: 2 <-> rb: 1 <-> rra: 3 <-> rrb: 4
+Node (53) - ra: 3 <-> rb: 2 <-> rra: 2 <-> rrb: 3
+Node (-82) - ra: 0 <-> rb: 3 <-> rra: 0 <-> rrb: 2
+Node (21) - ra: 3 <-> rb: 4 <-> rra: 2 <-> rrb: 1
 STACKS BEFORE PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--42 | -75
--17 |  59
- 30 |  35
- 32 | -67
- 94 | -40
-    | -98
-    | -71
+-59 | -20
+-28 |  -4
+  7 |  53
+ 75 | -82
+ 76 |  21
 -----+-----
 
-Cheapest num: -75 <-> cost: 1 and code: 32
-Instructions - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-PA
-STACKS AFTER PUSHING CHEAPEST
-
---- Stack State ---
-A     | B
------+-----
--75 |  59
--42 |  35
--17 | -67
- 30 | -40
- 32 | -98
- 94 | -71
------+-----
-
-Node (59) - ra: 5 <-> rb: 0 <-> rra: 2 <-> rrb: 0
-Node (59) - ra: 5 <-> rb: 0 <-> rra: 2 <-> rrb: 0
-Node (35) - ra: 5 <-> rb: 1 <-> rra: 2 <-> rrb: 5
-Node (-67) - ra: 1 <-> rb: 2 <-> rra: 6 <-> rrb: 4
-Node (-40) - ra: 2 <-> rb: 3 <-> rra: 5 <-> rrb: 3
-Node (-98) - ra: 0 <-> rb: 4 <-> rra: 0 <-> rrb: 2
-Node (-71) - ra: 1 <-> rb: 5 <-> rra: 6 <-> rrb: 1
-STACKS BEFORE PUSHING CHEAPEST
-
---- Stack State ---
-A     | B
------+-----
--75 |  59
--42 |  35
--17 | -67
- 30 | -40
- 32 | -98
- 94 | -71
------+-----
-
-Cheapest num: -67 <-> cost: 4 and code: 32
-Instructions - ra: 1 <-> rb: 2 <-> rra: 6 <-> rrb: 4
+Cheapest num: -4 <-> cost: 4 and code: 32
+Instructions - ra: 2 <-> rb: 1 <-> rra: 3 <-> rrb: 4
 RR
-RB
+RA
 PA
 STACKS AFTER PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--67 | -40
--42 | -98
--17 | -71
- 30 |  59
- 32 |  35
- 94 | 
--75 | 
+ -4 |  53
+  7 | -82
+ 75 |  21
+ 76 | -20
+-59 | 
+-28 | 
 -----+-----
 
-Node (-40) - ra: 2 <-> rb: 0 <-> rra: 6 <-> rrb: 0
-Node (-40) - ra: 2 <-> rb: 0 <-> rra: 6 <-> rrb: 0
-Node (-98) - ra: 6 <-> rb: 1 <-> rra: 2 <-> rrb: 4
+Node (53) - ra: 2 <-> rb: 0 <-> rra: 4 <-> rrb: 0
+Node (53) - ra: 2 <-> rb: 0 <-> rra: 4 <-> rrb: 0
+Node (-82) - ra: 4 <-> rb: 1 <-> rra: 2 <-> rrb: 3
+Node (21) - ra: 2 <-> rb: 2 <-> rra: 4 <-> rrb: 2
 IS TOP
-Found breakpoint for -71 at (0) before num: -67
-Node (-71) - ra: 0 <-> rb: 2 <-> rra: 0 <-> rrb: 3
-Node (59) - ra: 5 <-> rb: 3 <-> rra: 3 <-> rrb: 2
-Node (35) - ra: 5 <-> rb: 4 <-> rra: 3 <-> rrb: 1
+Found breakpoint for -20 at (0) before num: -4
+Node (-20) - ra: 0 <-> rb: 3 <-> rra: 0 <-> rrb: 1
 STACKS BEFORE PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--67 | -40
--42 | -98
--17 | -71
- 30 |  59
- 32 |  35
- 94 | 
--75 | 
+ -4 |  53
+  7 | -82
+ 75 |  21
+ 76 | -20
+-59 | 
+-28 | 
 -----+-----
 
-Cheapest num: -71 <-> cost: 4 and code: 32
-Instructions - ra: 0 <-> rb: 2 <-> rra: 0 <-> rrb: 3
-RB
-RB
+Cheapest num: -20 <-> cost: 2 and code: 39
+Instructions - ra: 0 <-> rb: 3 <-> rra: 0 <-> rrb: 1
+RRB
 PA
 STACKS AFTER PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--71 |  59
--67 |  35
--42 | -40
--17 | -98
- 30 | 
- 32 | 
- 94 | 
--75 | 
+-20 |  53
+ -4 | -82
+  7 |  21
+ 75 | 
+ 76 | 
+-59 | 
+-28 | 
 -----+-----
 
-Node (59) - ra: 6 <-> rb: 0 <-> rra: 3 <-> rrb: 0
-Node (59) - ra: 6 <-> rb: 0 <-> rra: 3 <-> rrb: 0
-Node (35) - ra: 6 <-> rb: 1 <-> rra: 3 <-> rrb: 3
-Node (-40) - ra: 3 <-> rb: 2 <-> rra: 6 <-> rrb: 2
-Node (-98) - ra: 7 <-> rb: 3 <-> rra: 2 <-> rrb: 1
+Node (53) - ra: 3 <-> rb: 0 <-> rra: 4 <-> rrb: 0
+Node (53) - ra: 3 <-> rb: 0 <-> rra: 4 <-> rrb: 0
+Node (-82) - ra: 5 <-> rb: 1 <-> rra: 2 <-> rrb: 2
+Node (21) - ra: 3 <-> rb: 2 <-> rra: 4 <-> rrb: 1
 STACKS BEFORE PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
--71 |  59
--67 |  35
--42 | -40
--17 | -98
- 30 | 
- 32 | 
- 94 | 
--75 | 
+-20 |  53
+ -4 | -82
+  7 |  21
+ 75 | 
+ 76 | 
+-59 | 
+-28 | 
 -----+-----
 
-Cheapest num: -98 <-> cost: 4 and code: 39
-Instructions - ra: 7 <-> rb: 3 <-> rra: 2 <-> rrb: 1
+Cheapest num: -82 <-> cost: 4 and code: 39
+Instructions - ra: 5 <-> rb: 1 <-> rra: 2 <-> rrb: 2
+RRR
+RRR
 PA
 STACKS AFTER PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
- 59 |  35
--71 | -40
--67 | -98
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
+-82 |  21
+-59 |  53
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
+ 75 | 
+ 76 | 
 -----+-----
 
-IS TOP
-Found breakpoint for 35 at (0) before num: 59
-Node (35) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-IS TOP
-Found breakpoint for 35 at (0) before num: 59
-Node (35) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-IS TOP
-Found breakpoint for -40 at (0) before num: 59
-Node (-40) - ra: 0 <-> rb: 1 <-> rra: 0 <-> rrb: 2
-Node (-98) - ra: 8 <-> rb: 2 <-> rra: 2 <-> rrb: 1
+Node (21) - ra: 6 <-> rb: 0 <-> rra: 2 <-> rrb: 0
+Node (21) - ra: 6 <-> rb: 0 <-> rra: 2 <-> rrb: 0
+Node (53) - ra: 6 <-> rb: 1 <-> rra: 2 <-> rrb: 1
 STACKS BEFORE PUSHING CHEAPEST
 
 --- Stack State ---
 A     | B
 -----+-----
- 59 |  35
--71 | -40
--67 | -98
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
+-82 |  21
+-59 |  53
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
+ 75 | 
+ 76 | 
 -----+-----
 
-Cheapest num: 35 <-> cost: 1 and code: 32
+Cheapest num: 53 <-> cost: 4 and code: 39
+Instructions - ra: 6 <-> rb: 1 <-> rra: 2 <-> rrb: 1
+RRR
+RRA
+PA
+STACKS AFTER PUSHING CHEAPEST
+
+--- Stack State ---
+A     | B
+-----+-----
+ 53 |  21
+ 75 | 
+ 76 | 
+-82 | 
+-59 | 
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
+-----+-----
+
+IS TOP
+Found breakpoint for 21 at (0) before num: 53
+Node (21) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
+IS TOP
+Found breakpoint for 21 at (0) before num: 53
+Node (21) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
+STACKS BEFORE PUSHING CHEAPEST
+
+--- Stack State ---
+A     | B
+-----+-----
+ 53 |  21
+ 75 | 
+ 76 | 
+-82 | 
+-59 | 
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
+-----+-----
+
+Cheapest num: 21 <-> cost: 1 and code: 32
 Instructions - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
 PA
 STACKS AFTER PUSHING CHEAPEST
@@ -289,143 +262,36 @@ STACKS AFTER PUSHING CHEAPEST
 --- Stack State ---
 A     | B
 -----+-----
- 35 | -40
- 59 | -98
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
+ 21 | 
+ 53 | 
+ 75 | 
+ 76 | 
+-82 | 
+-59 | 
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
 -----+-----
 
-IS TOP
-Found breakpoint for -40 at (0) before num: 35
-Node (-40) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-IS TOP
-Found breakpoint for -40 at (0) before num: 35
-Node (-40) - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-Node (-98) - ra: 9 <-> rb: 1 <-> rra: 2 <-> rrb: 1
-STACKS BEFORE PUSHING CHEAPEST
+RA
+RA
+RA
+RA
+The stack is correctly sorted.
 
 --- Stack State ---
 A     | B
 -----+-----
- 35 | -40
- 59 | -98
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
------+-----
-
-Cheapest num: -40 <-> cost: 1 and code: 32
-Instructions - ra: 0 <-> rb: 0 <-> rra: 0 <-> rrb: 0
-PA
-STACKS AFTER PUSHING CHEAPEST
-
---- Stack State ---
-A     | B
------+-----
--40 | -98
- 35 | 
- 59 | 
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
------+-----
-
-Node (-98) - ra: 10 <-> rb: 0 <-> rra: 2 <-> rrb: 0
-Node (-98) - ra: 10 <-> rb: 0 <-> rra: 2 <-> rrb: 0
-STACKS BEFORE PUSHING CHEAPEST
-
---- Stack State ---
-A     | B
------+-----
--40 | -98
- 35 | 
- 59 | 
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
------+-----
-
-Cheapest num: -98 <-> cost: 5 and code: 39
-Instructions - ra: 10 <-> rb: 0 <-> rra: 2 <-> rrb: 0
-PA
-STACKS AFTER PUSHING CHEAPEST
-
---- Stack State ---
-A     | B
------+-----
--98 | 
--40 | 
- 35 | 
- 59 | 
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
- 94 | 
--75 | 
------+-----
-
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-RA
-Error: The stack is not correctly sorted.
-
---- Stack State ---
-A     | B
------+-----
- 94 | 
--75 | 
--98 | 
--40 | 
- 35 | 
- 59 | 
--71 | 
--67 | 
--42 | 
--17 | 
- 30 | 
- 32 | 
+-82 | 
+-59 | 
+-28 | 
+-20 | 
+ -4 | 
+  7 | 
+ 21 | 
+ 53 | 
+ 75 | 
+ 76 | 
 -----+-----
 

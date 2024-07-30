@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/26 13:40:17 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:44:20 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 	if (i == 0)
 		node_b->rra = 0;
 	else
-		node_b->rra = a->size - i + 1;
+		node_b->rra = a->size - i;
 	node_b->rb = node_b_pos;
 	if (node_b_pos == 0)
 		node_b->rrb = 0;
@@ -189,26 +189,26 @@ void	push_cheapest(t_stack *a, t_stack *b)
 	{
 		while (min->rra > 0 && min->rrb > 0)
 		{
-			ps_rx(a, b, RRR);
+			ps_rrx(a, b, RRR);
 			min->rra--;
 			min->rrb--;
 		}
 		while (min->rra-- > 0)
-			ps_rx(a, b, RRA);
+			ps_rrx(a, b, RRA);
 		while (min->rrb-- > 0)
-			ps_rx(a, b, RRB);
+			ps_rrx(a, b, RRB);
 	}
 	else if (b->min_instructions.code == RA_RRB)
 	{
 		while (min->ra-- > 0)
 			ps_rx(a, b, RA);
 		while (min->rrb-- > 0)
-			ps_rx(a, b, RRB);
+			ps_rrx(a, b, RRB);
 	}
 	else if (b->min_instructions.code == RRA_RB)
 	{
 		while (min->rra-- > 0)
-			ps_rx(a, b, RRA);
+			ps_rrx(a, b, RRA);
 		while (min->rb-- > 0)
 			ps_rx(a, b, RB);
 	}
