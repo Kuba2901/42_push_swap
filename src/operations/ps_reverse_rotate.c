@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:55:26 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/16 15:52:38 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:30:46 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ void	ps_rrx(t_stack *a, t_stack *b, int code)
 	if (code == RRA)
 	{
 		ps_reverse_rotate(a);
-		print_operation("RRA");
+		print_operation("rra");
 	}
 	else if (code == RRB)
 	{
 		ps_reverse_rotate(b);
-		print_operation("RRB");
+		print_operation("rrb");
 	}
 	else if (code == RRR)
 	{
 		ps_reverse_rotate(a);
 		ps_reverse_rotate(b);
-		print_operation("RRR");
+		print_operation("rrr");
 	}
 }

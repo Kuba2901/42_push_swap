@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:53:59 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 14:30:52 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:31:03 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ps_sx(t_stack *stack, int code)
 {
 	ps_swap(stack);
 	if (code == SA)
-		print_operation("SA");
+		print_operation("sa");
 	else if (code == SB)
-		print_operation("SB");
+		print_operation("sb");
 }

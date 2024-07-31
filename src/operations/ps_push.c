@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:51:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/17 16:29:15 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:30:40 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ void	ps_px(t_stack *a, t_stack *b, int code)
 	if (code == PA)
 	{
 		ps_push_to(b, a);
-		print_operation("PA");
+		print_operation("pa");
 	}
 	else if (code == PB)
 	{
 		ps_push_to(a, b);
-		print_operation("PB");
+		print_operation("pb");
 	}
 }
