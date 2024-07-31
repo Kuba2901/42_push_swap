@@ -10,22 +10,23 @@ int	choose_sorting_operation(t_stack *stack)
 	return (RA);
 }
 
+void ps_init_stacks(t_stack *a, t_stack *b)
+{
+	a->top = NULL;
+	a->bottom = NULL;
+	a->size = 0;
+	b->top = NULL;
+	b->bottom = NULL;
+	b->size = 0;
+}
+
 int main(int argc, char *argv[]) {
-    if (argc < 2) {
-        fprintf(stderr, "Usage: %s <list of integers>\n", argv[0]);
-        return 1;
-    }
+    t_stack	stack_a;
+    t_stack	stack_b;
 
-    t_stack stack_a;
-    t_stack stack_b;
-
-	stack_a.top = NULL;
-	stack_a.bottom = NULL;
-	stack_a.size = 0;
-	stack_b.top = NULL;
-	stack_b.bottom = NULL;
-	stack_b.size = 0;
-
+    if (argc < 2)
+		return (0);
+	ps_init_stacks(&stack_a, &stack_b);
     // Parse and validate input
     for (int i = argc - 1; i > 0; i--) {
         if (!ps_is_valid_integer(argv[i])) {
