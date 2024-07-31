@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:45:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/31 15:43:56 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 16:57:59 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void ps_sort_small(t_stack *a, t_stack *b)
     
     if (ps_is_sorted(a))
         return;
-    
     if (len_a == 2)
         ps_sx(a, SA);
     else if (len_a == 3)

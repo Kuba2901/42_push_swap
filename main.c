@@ -54,33 +54,41 @@ int	ps_detect_errors(int ac, char **av, t_stack *a)
 int main(int ac, char **av) {
     t_stack	stack_a;
     t_stack	stack_b;
+	int		*arr;
 
     if (ac < 2)
 		return (0);
 	ps_init_stacks(&stack_a, &stack_b);
 	if (ps_detect_errors(ac, av, &stack_a))
 		exit(0);
-    // DETECT ERRORS
-	int	*arr = ps_dup_stack(&stack_a);
-	ps_sort_int_array(arr, stack_a.size);
-	ps_assign_indexes(&stack_a, arr);
-	ps_push_out_of_sequence(&stack_a, &stack_b);
-	ps_sort_small(&stack_a, &stack_b);
-	while (stack_b.size)
+	arr = ps_dup_stack(&stack_a);
+	if (!ps_is_sorted(&stack_a))
 	{
-		ps_assign_push_cost(&stack_a, &stack_b);
-		push_cheapest(&stack_a, &stack_b);
-	}
-	int	i = stack_a.size + 10;
-	if (choose_sorting_operation(&stack_a) == RA)
-	{
-		while (!ps_is_sorted(&stack_a) && i--)
-			ps_rx(&stack_a, &stack_b, RA);
-	}
-	else
-	{
-		while (!ps_is_sorted(&stack_a) && i--)
-			ps_rrx(&stack_a, &stack_b, RRA);
+		if (stack_a.size <= 5)
+			ps_sort_small(&stack_a, &stack_b);
+		else
+		{
+			ps_sort_int_array(arr, stack_a.size);
+			ps_assign_indexes(&stack_a, arr);
+			ps_push_out_of_sequence(&stack_a, &stack_b);
+			ps_sort_small(&stack_a, &stack_b);
+			while (stack_b.size)
+			{
+				ps_assign_push_cost(&stack_a, &stack_b);
+				push_cheapest(&stack_a, &stack_b);
+			}
+		}
+		int	i = stack_a.size + 10;
+		if (choose_sorting_operation(&stack_a) == RA)
+		{
+			while (!ps_is_sorted(&stack_a) && i--)
+				ps_rx(&stack_a, &stack_b, RA);
+		}
+		else
+		{
+			while (!ps_is_sorted(&stack_a) && i--)
+				ps_rrx(&stack_a, &stack_b, RRA);
+		}
 	}
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");

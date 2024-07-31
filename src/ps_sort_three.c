@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:56:57 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 15:11:30 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:03:37 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void ps_sort_three(t_stack *stack) {
 		ps_rrx(stack, NULL, RRA);
     } else if (a > b && b < c && a > c) {
 		ps_rx(stack, NULL, RA);
-        ps_rotate(stack);
     } else if (a < b && b > c && a < c) {
 		ps_sx(stack, SA);
         ps_rx(stack, NULL, RA);
