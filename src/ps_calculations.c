@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/30 18:44:20 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:54:49 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,8 +115,8 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 			{
 				if (a->bottom->final_index < node_b->final_index)
 				{
-					printf("IS TOP\n");
-					printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
+					// printf("IS TOP\n");
+					// printf("Found breakpoint for %d at (%d) before num: %d\n", node_b->value, i, node_a->value);
 					break ;
 				}
 			}
@@ -136,7 +136,7 @@ static void	assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_
 		node_b->rrb = 0;
 	else
 		node_b->rrb = b->size - node_b_pos;
-	printf("Node (%d) - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", node_b->value, node_b->ra, node_b->rb, node_b->rra, node_b->rrb);
+	// printf("Node (%d) - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", node_b->value, node_b->ra, node_b->rb, node_b->rra, node_b->rrb);
 }
 
 void	ps_assign_push_cost(t_stack *a, t_stack *b)
@@ -168,10 +168,10 @@ void	push_cheapest(t_stack *a, t_stack *b)
 	t_node	*min;
 
 	min = b->min;
-	print_operation("STACKS BEFORE PUSHING CHEAPEST");
-	print_stacks(a, b);
-	printf("Cheapest num: %d <-> cost: %d and code: %d\n", min->value, b->min_instructions.cost, b->min_instructions.code);
-	printf("Instructions - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", min->ra, min->rb, min->rra, min->rrb);
+	// print_operation("STACKS BEFORE PUSHING CHEAPEST");
+	// print_stacks(a, b);
+	// printf("Cheapest num: %d <-> cost: %d and code: %d\n", min->value, b->min_instructions.cost, b->min_instructions.code);
+	// printf("Instructions - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", min->ra, min->rb, min->rra, min->rrb);
 	if (b->min_instructions.code == RR)
 	{
 		while (min->ra > 0 && min->rb > 0)
@@ -213,8 +213,8 @@ void	push_cheapest(t_stack *a, t_stack *b)
 			ps_rx(a, b, RB);
 	}
 	ps_px(a, b, PA);
-	print_operation("STACKS AFTER PUSHING CHEAPEST");
-	print_stacks(a, b);
+	// print_operation("STACKS AFTER PUSHING CHEAPEST");
+	// print_stacks(a, b);
 }
 
 static int	ps_abs(int num)
@@ -227,29 +227,29 @@ static int	ps_abs(int num)
 t_instructions calculate_total_cost(t_node *node)
 {
     int				cost_rrr;
-    // int				cost_ra_rrb;
-    // int				cost_rra_rb;
+    int				cost_ra_rrb;
+    int				cost_rra_rb;
 	t_instructions	instructions;
 	
 	instructions.code = RR;
 	instructions.cost = ps_abs(node->ra - node->rb) + ((node->ra + node->rb / 2) + 1);
 	cost_rrr = ps_abs(node->rra - node->rrb) + ((node->rra + node->rrb / 2) + 1);
-	// cost_ra_rrb = node->ra + node->rrb;
-	// cost_rra_rb = node->rra + node->rb;
+	cost_ra_rrb = node->ra + node->rrb;
+	cost_rra_rb = node->rra + node->rb;
     if (cost_rrr < instructions.cost)
 	{
 		instructions.code = RRR;
 		instructions.cost = cost_rrr;
 	}
-    // if (cost_ra_rrb < instructions.cost)
-	// {
-	// 	instructions.code = RA_RRB;
-	// 	instructions.cost = cost_ra_rrb;
-	// }
-    // if (cost_rra_rb < instructions.cost)
-	// {
-	// 	instructions.code = RRA_RB;
-	// 	instructions.cost = cost_rra_rb;
-	// }
+    if (cost_ra_rrb < instructions.cost)
+	{
+		instructions.code = RA_RRB;
+		instructions.cost = cost_ra_rrb;
+	}
+    if (cost_rra_rb < instructions.cost)
+	{
+		instructions.code = RRA_RB;
+		instructions.cost = cost_rra_rb;
+	}
     return (instructions);
 }

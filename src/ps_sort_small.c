@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/15 16:45:42 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 15:00:20 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/30 18:54:27 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,10 @@ void	ps_sort_five(t_stack *a, t_stack *b)
 	if (ps_is_sorted(a))
 		return ;
 	ps_push_to(a, b);
-	print_operation("PB");
-	print_operation("PRINTING AFTER PUSH");
-	print_stacks(a, b);
+	// print_operation("PB");
+	// print_operation("PRINTING AFTER PUSH");
+	// print_stacks(a, b);
 	ps_sort_four(a, b);
-	print_operation("PRINTING AFTER 4 SORT");
-	print_stacks(a, b);
+	// print_operation("PRINTING AFTER 4 SORT");
+	// print_stacks(a, b);
 }

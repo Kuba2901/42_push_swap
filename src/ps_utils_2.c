@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/23 15:00:23 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/07/31 14:35:31 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ static void quicksort(int *array, int start, int end)
     }
 }
 
-static void print_int_array(int *arr, int size)
-{
-    int i;
-    for (i = 0; i < size; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
-}
+// static void print_int_array(int *arr, int size)
+// {
+//     int i;
+//     for (i = 0; i < size; i++)
+//         printf("%d ", arr[i]);
+//     printf("\n");
+// }
 
 int *ps_dup_stack(t_stack *stack)
 {
@@ -83,7 +83,7 @@ int *ps_dup_stack(t_stack *stack)
 void	ps_sort_int_array(int *arr, int arr_size)
 {
 	quicksort(arr, 0, arr_size - 1);
-	print_int_array(arr, arr_size);
+	// print_int_array(arr, arr_size);
 }
 
 static int	ps_find_num_index(int *arr, int arr_size, int num)
@@ -99,17 +99,17 @@ static int	ps_find_num_index(int *arr, int arr_size, int num)
 	return (-1);
 }
 
-static void	print_stack_with_final_indexes(t_stack *stack)
-{
-	t_node	*node;
+// static void	print_stack_with_final_indexes(t_stack *stack)
+// {
+// 	t_node	*node;
 
-	node = stack->top;
-	while (node)
-	{
-		printf("Value: (%d), final index: (%d)\n", node->value, node->final_index);
-		node = node->next;
-	}
-}
+// 	node = stack->top;
+// 	while (node)
+// 	{
+// 		printf("Value: (%d), final index: (%d)\n", node->value, node->final_index);
+// 		node = node->next;
+// 	}
+// }
 
 void	ps_assign_indexes(t_stack *a, int *arr)
 {
@@ -127,7 +127,7 @@ void	ps_assign_indexes(t_stack *a, int *arr)
 		}
 		i = i->next;
 	}
-	print_stack_with_final_indexes(a);
+	// print_stack_with_final_indexes(a);
 }
 
 void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
