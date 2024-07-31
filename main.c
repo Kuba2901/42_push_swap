@@ -59,16 +59,9 @@ int main(int argc, char *argv[]) {
 		push_cheapest(&stack_a, &stack_b);
 	}
 	int	i = stack_a.size + 10;
-	// if (choose_sorting_operation(stack_a))
-	// {
 	while (!ps_is_sorted(&stack_a) && i--)
 		ps_rx(&stack_a, &stack_b, RA);
-	// }
-	// else
-	// {
-	// 	while (!ps_is_sorted(&stack_a) && i--)
-	// 		ps_rrx(&stack_a, &stack_b, RRA);
-	// }
+
     if (ps_is_sorted(&stack_a)) {
         printf("The stack is correctly sorted.\n");
     } else {
