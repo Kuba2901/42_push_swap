@@ -103,11 +103,6 @@ int main(int ac, char **av) {
 			ps_complex_sort(&stack_a, &stack_b);
 		ps_final_sort(&stack_a, &stack_b);
 	}
-    // if (ps_is_sorted(&stack_a))
-    //     printf("The stack is correctly sorted.\n");
-    // else
-    //     printf("Error: The stack is not correctly sorted.\n");
-	// print_stacks(&stack_a, &stack_b);
     ps_free_stack(&stack_a);
     ps_free_stack(&stack_b);
     return (0);
