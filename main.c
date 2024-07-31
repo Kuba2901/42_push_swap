@@ -20,28 +20,47 @@ void ps_init_stacks(t_stack *a, t_stack *b)
 	b->size = 0;
 }
 
-int main(int argc, char *argv[]) {
+void	ps_printf_fd(int fd, char *str)
+{
+	while (*str)
+	{
+		write(fd, str, 1);
+		str++;
+	}
+}
+
+int	ps_detect_errors(int ac, char **av, t_stack *a)
+{
+	int	i;
+
+	i = ac;
+	while (--i > 0)
+	{
+		if (!ps_is_valid_integer(av[i])) {
+			ps_printf_fd(STDERR_FILENO, "Error: Some of the arguments are not integers\n");
+            ps_free_stack(a);
+            return (1);
+        }
+        ps_stack_push(a, ft_atoi(av[i]));
+	}
+    if (ps_has_duplicates(a)) {
+		ps_printf_fd(STDERR_FILENO, "Error: Duplicate numbers found\n");
+        ps_free_stack(a);
+        return (1);
+    }
+	return (0);
+}
+
+int main(int ac, char **av) {
     t_stack	stack_a;
     t_stack	stack_b;
 
-    if (argc < 2)
+    if (ac < 2)
 		return (0);
 	ps_init_stacks(&stack_a, &stack_b);
-    // Parse and validate input
-    for (int i = argc - 1; i > 0; i--) {
-        if (!ps_is_valid_integer(argv[i])) {
-            fprintf(stderr, "Error: Invalid input '%s'\n", argv[i]);
-            ps_free_stack(&stack_a);
-            return 1;
-        }
-        ps_stack_push(&stack_a, atoi(argv[i]));
-    }
-
-    if (ps_has_duplicates(&stack_a)) {
-        fprintf(stderr, "Error: Duplicate numbers found\n");
-        ps_free_stack(&stack_a);
-        return 1;
-    }
+	if (ps_detect_errors(ac, av, &stack_a))
+		exit(0);
+    // DETECT ERRORS
 	int	*arr = ps_dup_stack(&stack_a);
 	ps_sort_int_array(arr, stack_a.size);
 	ps_assign_indexes(&stack_a, arr);
