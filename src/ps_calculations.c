@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/30 18:54:49 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/01 17:17:02 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,10 +168,6 @@ void	push_cheapest(t_stack *a, t_stack *b)
 	t_node	*min;
 
 	min = b->min;
-	// print_operation("STACKS BEFORE PUSHING CHEAPEST");
-	// print_stacks(a, b);
-	// printf("Cheapest num: %d <-> cost: %d and code: %d\n", min->value, b->min_instructions.cost, b->min_instructions.code);
-	// printf("Instructions - ra: %d <-> rb: %d <-> rra: %d <-> rrb: %d\n", min->ra, min->rb, min->rra, min->rrb);
 	if (b->min_instructions.code == RR)
 	{
 		while (min->ra > 0 && min->rb > 0)
@@ -217,39 +213,73 @@ void	push_cheapest(t_stack *a, t_stack *b)
 	// print_stacks(a, b);
 }
 
-static int	ps_abs(int num)
-{
-	if (num < 0)
-		return (-num);
-	return (num);
-}
+// static int	ps_abs(int num)
+// {
+// 	if (num < 0)
+// 		return (-num);
+// 	return (num);
+// }
 
+// NEW
 t_instructions calculate_total_cost(t_node *node)
 {
-    int				cost_rrr;
-    int				cost_ra_rrb;
-    int				cost_rra_rb;
-	t_instructions	instructions;
-	
-	instructions.code = RR;
-	instructions.cost = ps_abs(node->ra - node->rb) + ((node->ra + node->rb / 2) + 1);
-	cost_rrr = ps_abs(node->rra - node->rrb) + ((node->rra + node->rrb / 2) + 1);
-	cost_ra_rrb = node->ra + node->rrb;
-	cost_rra_rb = node->rra + node->rb;
+    t_instructions instructions;
+    int cost_rr, cost_rrr, cost_ra_rrb, cost_rra_rb;
+
+    cost_rr = (node->ra > node->rb) ? node->ra : node->rb;
+    cost_rrr = (node->rra > node->rrb) ? node->rra : node->rrb;
+    cost_ra_rrb = node->ra + node->rrb;
+    cost_rra_rb = node->rra + node->rb;
+
+    instructions.code = RR;
+    instructions.cost = cost_rr;
+
     if (cost_rrr < instructions.cost)
-	{
-		instructions.code = RRR;
-		instructions.cost = cost_rrr;
-	}
+    {
+        instructions.code = RRR;
+        instructions.cost = cost_rrr;
+    }
     if (cost_ra_rrb < instructions.cost)
-	{
-		instructions.code = RA_RRB;
-		instructions.cost = cost_ra_rrb;
-	}
+    {
+        instructions.code = RA_RRB;
+        instructions.cost = cost_ra_rrb;
+    }
     if (cost_rra_rb < instructions.cost)
-	{
-		instructions.code = RRA_RB;
-		instructions.cost = cost_rra_rb;
-	}
-    return (instructions);
+    {
+        instructions.code = RRA_RB;
+        instructions.cost = cost_rra_rb;
+    }
+    return instructions;
 }
+
+
+// ORIGINAL
+// t_instructions calculate_total_cost(t_node *node)
+// {
+//     int				cost_rrr;
+//     int				cost_ra_rrb;
+//     int				cost_rra_rb;
+// 	t_instructions	instructions;
+	
+// 	instructions.code = RR;
+// 	instructions.cost = ps_abs(node->ra - node->rb) + ((node->ra + node->rb / 2) + 1);
+// 	cost_rrr = ps_abs(node->rra - node->rrb) + ((node->rra + node->rrb / 2) + 1);
+// 	cost_ra_rrb = node->ra + node->rrb;
+// 	cost_rra_rb = node->rra + node->rb;
+//     if (cost_rrr < instructions.cost)
+// 	{
+// 		instructions.code = RRR;
+// 		instructions.cost = cost_rrr;
+// 	}
+//     if (cost_ra_rrb < instructions.cost)
+// 	{
+// 		instructions.code = RA_RRB;
+// 		instructions.cost = cost_ra_rrb;
+// 	}
+//     if (cost_rra_rb < instructions.cost)
+// 	{
+// 		instructions.code = RRA_RB;
+// 		instructions.cost = cost_rra_rb;
+// 	}
+//     return (instructions);
+// }
