@@ -57,6 +57,20 @@ typedef struct s_stack {
 	t_instructions min_instructions;
 } t_stack;
 
+// Initialization
+void	ps_init_stacks(t_stack *a, t_stack *b);
+int		ps_detect_errors(int ac, char **av, t_stack *a);
+
+// Utils 3
+void	ps_printf_fd(int fd, char *str);
+
+// Sorting
+int		ps_choose_sorting_operation(t_stack *stack);
+void	ps_complex_sort(t_stack *a, t_stack *b);
+
+// Post
+void	ps_final_sort(t_stack *a, t_stack *b);
+
 int		ps_stack_pop(t_stack *stack);
 void	ps_stack_push(t_stack *stack, int value);
 void	ps_push_to(t_stack *src, t_stack *dst);
@@ -89,5 +103,4 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b);
 void	ps_push_out_of_sequence(t_stack *a, t_stack *b);
 t_instructions	calculate_total_cost(t_node *node);
 void	push_cheapest(t_stack *a, t_stack *b);
-int	ps_get_max_index(t_stack *a);
 #endif
