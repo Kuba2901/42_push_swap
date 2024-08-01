@@ -89,4 +89,5 @@ void	ps_assign_push_cost(t_stack *a, t_stack *b);
 void	ps_push_out_of_sequence(t_stack *a, t_stack *b);
 t_instructions	calculate_total_cost(t_node *node);
 void	push_cheapest(t_stack *a, t_stack *b);
+int	ps_get_max_index(t_stack *a);
 #endif

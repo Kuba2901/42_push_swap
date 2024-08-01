@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/31 14:35:31 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/01 17:26:27 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,3 +149,4 @@ void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
 		}
 	}
 }
+
