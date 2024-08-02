@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:54:25 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/01 19:50:53 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 17:06:25 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	ps_detect_errors(int ac, char **av, t_stack *a)
 	while (--i > 0)
 	{
 		if (!ps_is_valid_integer(av[i])) {
-			ps_printf_fd(STDERR_FILENO, "Error: Some of the arguments are not integers\n");
+			ps_printf_fd(STDERR_FILENO, "Error\n");
             ps_free_stack(a);
             return (1);
         }
         ps_stack_push(a, ft_atoi(av[i]));
 	}
     if (ps_has_duplicates(a)) {
-		ps_printf_fd(STDERR_FILENO, "Error: Duplicate numbers found\n");
+		ps_printf_fd(STDERR_FILENO, "Error\n");
         ps_free_stack(a);
         return (1);
     }
