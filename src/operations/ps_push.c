@@ -6,13 +6,13 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:51:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/31 17:30:40 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:24:48 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-void ps_stack_push(t_stack *stack, int value)
+void	ps_stack_push(t_stack *stack, int value)
 {
     t_node	*new_node;
 	
@@ -36,7 +36,7 @@ void	ps_push_to(t_stack *src, t_stack *dst)
 	int	final_index;
 
     if (src->size == 0)
-		return;
+		return ;
 	final_index = src->top->final_index;
 	value = ps_stack_pop(src);
     ps_stack_push(dst, value);

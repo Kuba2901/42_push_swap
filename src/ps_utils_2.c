@@ -6,25 +6,26 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/01 17:26:27 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:23:05 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-static void swap(int *a, int *b)
+static void	swap(int *a, int *b)
 {
-    int tmp;
+    int	tmp;
+	
     tmp = *a;
     *a = *b;
     *b = tmp;
 }
 
-static int partition(int *array, int start, int end)
+static int	partition(int *array, int start, int end)
 {
-    int pivot;
-    int i;
-    int j;
+    int	pivot;
+    int	i;
+    int	j;
 
     pivot = array[end];
     i = start - 1;
@@ -42,9 +43,10 @@ static int partition(int *array, int start, int end)
     return (i + 1);
 }
 
-static void quicksort(int *array, int start, int end)
+static void	quicksort(int *array, int start, int end)
 {
-    int pivot_index;
+    int	pivot_index;
+
     if (start < end)
     {
         pivot_index = partition(array, start, end);
@@ -53,19 +55,11 @@ static void quicksort(int *array, int start, int end)
     }
 }
 
-// static void print_int_array(int *arr, int size)
-// {
-//     int i;
-//     for (i = 0; i < size; i++)
-//         printf("%d ", arr[i]);
-//     printf("\n");
-// }
-
-int *ps_dup_stack(t_stack *stack)
+int	*ps_dup_stack(t_stack *stack)
 {
-    int *ret;
-    int i;
-    t_node *current;
+    int		*ret;
+    int		i;
+    t_node	*current;
 
     ret = malloc(sizeof(int) * ps_get_stack_len(stack));
     if (ret == NULL)
@@ -83,7 +77,6 @@ int *ps_dup_stack(t_stack *stack)
 void	ps_sort_int_array(int *arr, int arr_size)
 {
 	quicksort(arr, 0, arr_size - 1);
-	// print_int_array(arr, arr_size);
 }
 
 static int	ps_find_num_index(int *arr, int arr_size, int num)
@@ -98,18 +91,6 @@ static int	ps_find_num_index(int *arr, int arr_size, int num)
 	}
 	return (-1);
 }
-
-// static void	print_stack_with_final_indexes(t_stack *stack)
-// {
-// 	t_node	*node;
-
-// 	node = stack->top;
-// 	while (node)
-// 	{
-// 		printf("Value: (%d), final index: (%d)\n", node->value, node->final_index);
-// 		node = node->next;
-// 	}
-// }
 
 void	ps_assign_indexes(t_stack *a, int *arr)
 {
@@ -127,13 +108,12 @@ void	ps_assign_indexes(t_stack *a, int *arr)
 		}
 		i = i->next;
 	}
-	// print_stack_with_final_indexes(a);
 }
 
 void	ps_push_out_of_sequence(t_stack *a, t_stack *b)
 {
-	int		max;
-	int		first;
+	int	max;
+	int	first;
 
 	max = a->top->value;
 	first = max;

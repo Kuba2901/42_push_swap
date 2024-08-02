@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:55:26 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/07/31 17:30:46 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:25:02 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ps_reverse_rotate(t_stack *stack)
     t_node	*bottom_node;
 
     if (stack->size < 2)
-		return;
+		return ;
 	bottom_node = stack->bottom;
     stack->bottom = bottom_node->prev;
     stack->bottom->next = NULL;
