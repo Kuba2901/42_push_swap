@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:54:25 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 17:06:25 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:05:01 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,19 @@ int	ps_detect_errors(int ac, char **av, t_stack *a)
 	i = ac;
 	while (--i > 0)
 	{
-		if (!ps_is_valid_integer(av[i])) {
+		if (!ps_is_valid_integer(av[i]))
+		{
 			ps_printf_fd(STDERR_FILENO, "Error\n");
-            ps_free_stack(a);
-            return (1);
-        }
-        ps_stack_push(a, ft_atoi(av[i]));
+			ps_free_stack(a);
+			return (1);
+		}
+		ps_stack_push(a, ft_atoi(av[i]));
 	}
-    if (ps_has_duplicates(a)) {
+	if (ps_has_duplicates(a))
+	{
 		ps_printf_fd(STDERR_FILENO, "Error\n");
-        ps_free_stack(a);
-        return (1);
-    }
+		ps_free_stack(a);
+		return (1);
+	}
 	return (0);
 }

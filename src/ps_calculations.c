@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 17:12:01 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/01 20:23:38 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:55:43 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,57 +40,8 @@ static int	ps_is_max(t_stack *a, t_node *node_b)
 	return (1);
 }
 
-int	min_index(t_stack *a)
-{
-	t_node	*temp;
-	t_node	*min_node;
-	int		min_index;
-	int		i;
-
-	temp = a->top;
-	min_index = 0;
-	min_node = a->top;
-	i = 0;
-	while (temp)
-	{
-		if (temp->final_index < min_node->final_index)
-		{
-			min_index = i;
-			min_node = temp;
-		}
-		i++;
-		temp = temp->next;
-	}
-	return (min_index);
-}
-
-int	ps_get_max_index(t_stack *a)
-{
-	t_node	*temp;
-	t_node	*max_node;
-	int		max_index;
-	int		i;
-
-	temp = a->top;
-	max_index = 0;
-	max_node = a->top;
-	i = 0;
-	while (temp)
-	{
-		if (temp->final_index > max_node->final_index)
-		{
-			max_index = i;
-			max_node = temp;
-		}
-		i++;
-		temp = temp->next;
-	}
-	if (max_index == a->size - 1)
-		return (0);
-	return (i);
-}
-
-static void	ps_assign_node_cost(t_stack *a, t_stack *b, t_node *node_b, int node_b_pos)
+static void	ps_assign_node_cost(t_stack *a, t_stack *b,
+	t_node *node_b, int node_b_pos)
 {
 	t_node	*node_a;
 	int		i;
