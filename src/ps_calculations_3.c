@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 19:53:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 19:54:59 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:33:43 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,32 @@ int	ps_get_max_index(t_stack *a)
 	if (max_index == a->size - 1)
 		return (0);
 	return (i);
+}
+
+int	ps_is_min(t_stack *a, t_node *node_b)
+{
+	t_node	*temp;
+
+	temp = a->top;
+	while (temp)
+	{
+		if (temp->final_index < node_b->final_index)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
+}
+
+int	ps_is_max(t_stack *a, t_node *node_b)
+{
+	t_node	*temp;
+
+	temp = a->top;
+	while (temp)
+	{
+		if (temp->final_index > node_b->final_index)
+			return (0);
+		temp = temp->next;
+	}
+	return (1);
 }

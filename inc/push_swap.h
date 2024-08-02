@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/02 20:08:26 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 20:16:20 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:34:01 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,6 @@ void			ps_assign_instructions_data(t_instructions *instruction,
 int				ps_get_max_index(t_stack *a);
 int				min_index(t_stack *a);
 int				ps_find_num_index(int *arr, int arr_size, int num);
+int				ps_is_min(t_stack *a, t_node *node_b);
+int				ps_is_max(t_stack *a, t_node *node_b);
 #endif
