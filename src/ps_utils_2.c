@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 15:25:03 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 20:01:51 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 20:15:57 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ps_sort_int_array(int *arr, int arr_size)
 	quicksort(arr, 0, arr_size - 1);
 }
 
-static int	ps_find_num_index(int *arr, int arr_size, int num)
+int	ps_find_num_index(int *arr, int arr_size, int num)
 {
 	int	i;
 
