@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 15:51:06 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 19:24:48 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 19:48:35 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,32 @@
 
 void	ps_stack_push(t_stack *stack, int value)
 {
-    t_node	*new_node;
-	
+	t_node	*new_node;
+
 	new_node = malloc(sizeof(t_node));
-    if (!new_node)
+	if (!new_node)
 		exit(1);
-    new_node->value = value;
-    new_node->next = stack->top;
-    new_node->prev = NULL;
-    if (stack->top)
-        stack->top->prev = new_node;
-    else
-        stack->bottom = new_node;
-    stack->top = new_node;
-    stack->size++;
+	new_node->value = value;
+	new_node->next = stack->top;
+	new_node->prev = NULL;
+	if (stack->top)
+		stack->top->prev = new_node;
+	else
+		stack->bottom = new_node;
+	stack->top = new_node;
+	stack->size++;
 }
 
 void	ps_push_to(t_stack *src, t_stack *dst)
 {
-    int	value;
+	int	value;
 	int	final_index;
 
-    if (src->size == 0)
+	if (src->size == 0)
 		return ;
 	final_index = src->top->final_index;
 	value = ps_stack_pop(src);
-    ps_stack_push(dst, value);
+	ps_stack_push(dst, value);
 	dst->top->final_index = final_index;
 }
 
