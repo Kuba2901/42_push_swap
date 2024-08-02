@@ -6,7 +6,7 @@
 /*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 16:02:19 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 17:57:55 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/02 17:59:56 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,22 +40,8 @@ int	ps_is_valid_integer(const char *str)
 {
     char	*endptr;
     long	val;
-	int		contains_digits;
-	int		i;
 
 	if (*str == '\0')
-		return (0);
-	contains_digits = 0;
-	i = -1;
-	while (str[++i])
-	{
-		if (str[i] > '0' && str[i] < '9')
-		{
-			contains_digits = 1;
-			break ;
-		}
-	}
-	if (!contains_digits)
 		return (0);
 	val = ps_strtol(str, &endptr);
     return (*endptr == '\0' && val >= INT_MIN && val <= INT_MAX);
