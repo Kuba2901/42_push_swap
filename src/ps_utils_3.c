@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ps_utils_3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jnenczak <jnenczak@student.42roma.it>      +#+  +:+       +#+        */
+/*   By: jnenczak <jnenczak@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 17:55:20 by jnenczak          #+#    #+#             */
-/*   Updated: 2024/08/02 20:19:51 by jnenczak         ###   ########.fr       */
+/*   Updated: 2024/08/05 16:02:27 by jnenczak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ps_printf_fd(int fd, char *str)
 {
+	int	len;
+
 	while (*str)
 	{
-		write(fd, str, 1);
-		str++;
+		len = write(fd, str, 1);
+		if (len > 0)
+			str++;
 	}
 }
 
